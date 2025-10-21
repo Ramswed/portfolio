@@ -1,0 +1,182 @@
+.about-section {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.about-content {
+  margin-bottom: 60px;
+}
+
+.section-label {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.about-description {
+  font-family: "Poppins", "SF Pro Display", "Helvetica Neue", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 30px;
+  line-height: 1.4;
+}
+
+.about-text {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.team-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  margin: 60px 0;
+}
+
+.team-member {
+  text-align: center;
+  padding: 20px;
+  border-radius: 8px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.team-member:hover {
+  background-color: #f8f8f8;
+}
+
+.member-image {
+  width: 120px;
+  height: 120px;
+  background-color: #e5e5e5;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.team-member:hover .member-image {
+  background-color: #d5d5d5;
+  transform: scale(1.05);
+}
+
+.member-name {
+  font-family: "Poppins", "SF Pro Display", "Helvetica Neue", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 8px;
+}
+
+.member-role {
+  font-size: 14px;
+  color: #666;
+}
+
+.journey-section {
+  margin: 60px 0;
+}
+
+.journey-description {
+  font-family: "Poppins", "SF Pro Display", "Helvetica Neue", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.journey-text {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.skills-section {
+  margin: 60px 0;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin: 40px 0;
+}
+
+.skill-category {
+  padding: 25px;
+  border-radius: 8px;
+  background-color: #f8f8f8;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.skill-category:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-2px);
+}
+
+.skill-title {
+  font-family: "Poppins", "SF Pro Display", "Helvetica Neue", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.skill-items {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.specialties-section {
+  margin: 60px 0;
+}
+
+.specialties-description {
+  font-family: "Poppins", "SF Pro Display", "Helvetica Neue", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 30px;
+  line-height: 1.4;
+}
+
+.specialties-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin: 40px 0;
+}
+
+.specialty-item {
+  padding: 20px;
+  border-radius: 8px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.specialty-item:hover {
+  background-color: #f8f8f8;
+}
+
+.specialty-title {
+  font-family: "Poppins", "SF Pro Display", "Helvetica Neue", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.specialty-text {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}

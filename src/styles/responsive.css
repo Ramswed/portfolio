@@ -1,0 +1,189 @@
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    gap: 20px;
+    position: static;
+  }
+
+  .nav-logo {
+    position: static;
+    order: -1;
+  }
+
+  .nav-github {
+    position: static;
+    order: 1;
+  }
+
+  .nav-menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .project-row {
+    grid-template-columns: 1fr;
+  }
+
+  .home-title {
+    font-size: 72px;
+    font-family: "Rude", "Poppins", "SF Pro Display", "Helvetica Neue",
+      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-weight: 800;
+  }
+
+  .main-title {
+    font-size: 36px;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .social-list {
+    gap: 15px;
+  }
+
+  .testimonials-gallery {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .testimonial-images {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .cta-text {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main {
+    padding: 40px 15px;
+  }
+
+  .home-title {
+    font-size: 56px;
+    font-family: "Rude", "Poppins", "SF Pro Display", "Helvetica Neue",
+      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-weight: 800;
+  }
+
+  .main-title {
+    font-size: 28px;
+  }
+
+  .project-title {
+    font-size: 18px;
+  }
+
+  .cta-text {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .project-title {
+    font-size: 3rem;
+  }
+
+  .project-hero-image {
+    height: 400px;
+  }
+
+  .project-process-images {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .project-navigation {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .project-container {
+    padding: 0 15px;
+  }
+
+  .project-header {
+    padding: 40px 0 30px;
+  }
+
+  .project-title {
+    font-size: 2.5rem;
+  }
+
+  .project-subtitle {
+    font-size: 1.125rem;
+  }
+
+  .meta-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .project-hero-image {
+    height: 300px;
+    margin: 40px 0;
+  }
+
+  .project-section {
+    padding: 60px 0;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .section-text {
+    font-size: 1rem;
+  }
+
+  .project-process-images {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin: 40px 0;
+  }
+
+  .process-image {
+    height: 200px;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .feature-item {
+    padding: 15px;
+  }
+
+  .tech-tags {
+    gap: 8px;
+  }
+
+  .tech-tag {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+
+  .project-navigation {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav-button {
+    padding: 12px 24px;
+    font-size: 14px;
+    min-width: auto;
+  }
+}
