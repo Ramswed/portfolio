@@ -9,12 +9,16 @@ import groupie1Image from "../assets/images/groupietracker/groupie1.png";
 import groupie2Image from "../assets/images/groupietracker/groupie2.png";
 import groupie3Image from "../assets/images/groupietracker/groupie3.png";
 import groupie4Image from "../assets/images/groupietracker/groupie4.png";
-import leminImage from "../assets/images/lemin.png";
+import pocketmeImage from "../assets/images/pocket.png";
 import flintImage from "../assets/images/flint.png";
 import cuistotImage from "../assets/images/cuistot.png";
 import forumImage from "../assets/images/forum.png";
 import photoboothImage from "../assets/images/photobooth.png";
 import musebarImage from "../assets/images/musebar.png";
+import musebar1Image from "../assets/images/musebar/1haut de page.png";
+import musebar2Image from "../assets/images/musebar/2carte.png";
+import musebar3Image from "../assets/images/musebar/3notre histoire.png";
+import musebar4Image from "../assets/images/musebar/4privatiser.png";
 import dreamImage from "../assets/images/dream.png";
 import snsmImage from "../assets/images/snsm/snsm.png";
 import snsm1Image from "../assets/images/snsm/snsm00001.png";
@@ -90,29 +94,29 @@ const ProjectDetail = () => {
     },
     {
       id: 3,
-      title: "Lem-in",
-      category: "Algorithmes, Outil",
+      title: "Pocket-me",
+      category: "Application mobile",
       hasImage: true,
-      image: leminImage,
+      image: pocketmeImage,
       year: "2023 - 2024",
-      discipline: "Algorithmes, Outil",
-      sector: "Éducation / Algorithmes",
-      description: "Simulation de fourmilière avec algorithmes de pathfinding",
+      discipline: "Application mobile",
+      sector: "Mobile / Social",
+      description: "Application mobile sociale",
       longDescription:
-        "Une implémentation Go d'une simulation de fourmilière utilisant l'algorithme de Dijkstra et une version simplifiée de l'algorithme de Suurballe pour trouver des chemins disjoints. Le projet simule le déplacement des fourmis dans une colonie pour minimiser le nombre total de tours.",
+        "Application mobile sociale permettant de connecter les utilisateurs et de partager des moments.",
       features: [
-        "Algorithme de Dijkstra pour le chemin le plus court",
-        "Algorithme de Suurballe simplifié pour les chemins disjoints",
-        "Simulation efficace avec évitement de collision",
-        "Validation complète des entrées",
+        "Interface utilisateur intuitive",
+        "Fonctionnalités sociales",
+        "Design moderne",
+        "Expérience utilisateur optimisée",
       ],
-      technologies: ["Go", "Dijkstra", "Suurballe", "Graphes", "Algorithmes"],
+      technologies: ["React Native", "Mobile", "UI/UX"],
       concept:
-        "Simuler le déplacement optimal des fourmis dans une colonie en utilisant des algorithmes de pathfinding avancés pour minimiser le nombre total de tours nécessaires.",
+        "Créer une application mobile sociale qui connecte les utilisateurs et facilite le partage d'expériences.",
       process:
-        "Développement de l'architecture modulaire en Go, implémentation des algorithmes de pathfinding, création du système de simulation avec gestion des collisions, tests unitaires complets.",
+        "Conception de l'interface utilisateur, développement des fonctionnalités sociales, intégration des technologies mobiles, tests et optimisations.",
       results:
-        "Application fonctionnelle avec algorithmes optimisés, architecture modulaire, et système de test robuste pour résoudre efficacement les problèmes de pathfinding complexes.",
+        "Application mobile fonctionnelle avec interface moderne et expérience utilisateur optimisée pour connecter les utilisateurs.",
     },
     {
       id: 4,
@@ -239,25 +243,40 @@ const ProjectDetail = () => {
       category: "Site Vitrine, ui/ux",
       hasImage: true,
       image: musebarImage,
-      year: "2023 - 2024",
-      discipline: "Site Vitrine, ui/ux",
-      sector: "Hospitalité / Food & beverage",
-      description: "Site web officiel pour le Muse Bar à Rouen",
-      longDescription:
-        "Site web complet pour le Muse Bar, établissement de restauration d'exception situé au cœur de Rouen. Découvrez une expérience culinaire unique avec planches à partager, cocktails originaux et cave privatisable. Design responsive avec palette de couleurs signature et typographies élégantes.",
-      features: [
-        "Design responsive multi-breakpoints",
-        "Menu interactif avec configuration",
-        "Galerie photos immersive",
-        "Système de configuration modulaire",
+      additionalImages: [
+        musebar1Image,
+        musebar2Image,
+        musebar3Image,
+        musebar4Image,
       ],
-      technologies: ["HTML5", "CSS3", "JavaScript", "Configuration modulaire"],
+      year: "2025",
+      discipline: "Site Vitrine, ui/ux",
+      sector: "Service & Restauration",
+      description: "Site web vitrine pour le Muse Bar, un bar Rouennais",
+      longDescription:
+        "Site web vitrine moderne pour le Muse Bar, un bar simple et sympa avec une touche soignée, situé dans le centre historique de Rouen. Le site reflète l'identité du bar : « Pas de concept », juste un bar classique où tout est pensé avec soin. Design moderne où les couleurs du logo ressortent avec certains éléments du logo intégrés. Interface qui permet de découvrir l'histoire du bar, la carte (bières normandes, cocktails classiques et création, vin, softs maison), le processus de privatisation de la cave, les horaires, la localisation, les avis et les coordonnées.",
+      features: [
+        "Découvrir l'histoire du bar",
+        "Voir la carte complète",
+        "Connaître le processus de privatisation de la cave",
+        "Localiser le bar sur une carte interactive",
+      ],
+      technologies: [
+        "HTML5",
+        "CSS3 (Variables CSS, Animations @keyframes, Media queries, Flexbox/Grid)",
+        "JavaScript ES6+ (Vanilla)",
+        "Font Awesome 6.0.0",
+        "Google Fonts (Playfair Display, Poppins, Funnel Display)",
+        "Architecture modulaire (fragments HTML via fetch)",
+      ],
+      github: "https://github.com/Ramswed/MuseBar",
+      website: "https://musebar.fr",
       concept:
-        "Créer une expérience digitale qui capture l'élégance et l'atmosphère unique du Muse Bar, avec une palette de couleurs signature (orange #f0775a, bleu #0b1a39) et des typographies soignées.",
+        "Créer un site web vitrine qui capture l'esprit authentique du Muse Bar : un bar simple et sympa avec une touche soignée. Le design moderne met en valeur les couleurs et éléments du logo, reflétant l'identité du bar où « le concept c'est : pas de concept ». Une expérience digitale qui guide les visiteurs pour découvrir l'histoire, la carte, la localisation et toutes les informations pratiques du bar.",
       process:
-        "Développement du design system avec palette de couleurs personnalisée, création de l'architecture modulaire avec config.js et menu-config.js, implémentation du responsive design, intégration des assets visuels.",
+        "Premier projet web : rencontre avec le client pour définir les besoins, création de maquettes à la main, puis développement en HTML5/CSS3/JavaScript vanilla avec architecture modulaire. Projet réalisé en une semaine, parallèlement aux cours.",
       results:
-        "Site web complet et fonctionnel (v2.0.0) avec design system cohérent, configuration modulaire, et expérience utilisateur optimisée pour tous les appareils.",
+        "Site web complet et fonctionnel (v1.0) accessible sur musebar.fr. Le projet a été livré avec succès et rencontre une excellente réception de la part du client. Le site répond parfaitement aux objectifs initiaux en reflétant l'identité authentique du bar tout en offrant une expérience utilisateur simple et efficace. Tous les objectifs ont été atteints avec une solution qui capture l'essence du Muse Bar et répond à l'ensemble des besoins identifiés lors de la phase de conception.",
     },
     {
       id: 9,
@@ -581,6 +600,56 @@ const ProjectDetail = () => {
                   </motion.a>
                 ))}
               </div>
+            </motion.div>
+          </motion.section>
+        )}
+
+        {project.website && (
+          <motion.section
+            className="project-section"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+          >
+            <motion.div className="section-content" variants={itemVariants}>
+              <h2 className="section-title">Site Web</h2>
+              <motion.a
+                href={project.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="collaborator-link"
+                variants={itemVariants}
+                whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+              >
+                <span className="collaborator-name">Visiter le site</span>
+                <span className="collaborator-github">→</span>
+              </motion.a>
+            </motion.div>
+          </motion.section>
+        )}
+
+        {project.github && (
+          <motion.section
+            className="project-section"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+          >
+            <motion.div className="section-content" variants={itemVariants}>
+              <h2 className="section-title">Code Source</h2>
+              <motion.a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="collaborator-link"
+                variants={itemVariants}
+                whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+              >
+                <span className="collaborator-name">Voir sur GitHub</span>
+                <span className="collaborator-github">→</span>
+              </motion.a>
             </motion.div>
           </motion.section>
         )}

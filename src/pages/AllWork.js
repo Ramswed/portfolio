@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import asciiartImage from "../assets/images/asciiart/asciiart.png";
 import groupieImage from "../assets/images/groupietracker/groupie .png";
-import leminImage from "../assets/images/lemin.png";
+import pocketmeImage from "../assets/images/pocket.png";
 import flintImage from "../assets/images/flint.png";
 import cuistotImage from "../assets/images/cuistot.png";
 import forumImage from "../assets/images/forum.png";
@@ -31,10 +31,10 @@ const AllWork = () => {
     },
     {
       id: 3,
-      title: "Lem-in",
-      category: "Algorithmes, Outil",
+      title: "Pocket-me",
+      category: "Application mobile",
       hasImage: true,
-      image: leminImage,
+      image: pocketmeImage,
     },
     {
       id: 4,

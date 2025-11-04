@@ -1,182 +1,711 @@
 .about-section {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
-.about-content {
-  margin-bottom: 60px;
-}
-
-.section-label {
-  font-size: 14px;
-  color: #666;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.about-description {
-  font-family: "Poppins", "SF Pro Display", "Helvetica Neue", -apple-system,
-    BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  font-size: 24px;
-  font-weight: 600;
-  color: #000;
-  margin-bottom: 30px;
-  line-height: 1.4;
-}
-
-.about-text {
-  font-size: 18px;
-  line-height: 1.6;
-  color: #333;
-}
-
-.team-section {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 40px;
-  margin: 60px 0;
+/* Hero Section */
+.about-hero {
+  margin-bottom: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 0;
 }
 
 .team-member {
   text-align: center;
-  padding: 20px;
-  border-radius: 8px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  max-width: 400px;
 }
 
-.team-member:hover {
-  background-color: #f8f8f8;
+.member-image-wrapper {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
 }
 
 .member-image {
-  width: 120px;
-  height: 120px;
-  background-color: #e5e5e5;
+  width: 180px;
+  height: 180px;
+  background-color: #000;
   border-radius: 50%;
-  margin: 0 auto 20px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin: 0 auto;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.team-member:hover .member-image {
-  background-color: #d5d5d5;
-  transform: scale(1.05);
+.member-image::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 50%;
+  border: 1px solid #000;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.team-member:hover .member-image::before {
+  opacity: 1;
 }
 
 .member-name {
   font-family: "Poppins", "SF Pro Display", "Helvetica Neue", -apple-system,
     BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 36px;
+  font-weight: 700;
   color: #000;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
 }
 
 .member-role {
-  font-size: 14px;
+  font-size: 16px;
   color: #666;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
-.journey-section {
+/* Section Header */
+.section-header {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.section-number {
+  font-family: "Poppins", "SF Pro Display", "Helvetica Neue", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+  letter-spacing: 2px;
+  min-width: 30px;
+}
+
+.section-label {
+  font-size: 14px;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Section Divider */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    #e5e5e5 20%,
+    #e5e5e5 80%,
+    transparent
+  );
   margin: 60px 0;
+}
+
+/* Content Wrapper */
+.content-wrapper {
+  max-width: 800px;
+}
+
+/* About Content */
+.about-content {
+  margin-bottom: 80px;
+}
+
+.about-description {
+  font-family: "Poppins", "SF Pro Display", "Helvetica Neue", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 24px;
+  line-height: 1.3;
+  letter-spacing: -0.5px;
+}
+
+.about-text {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #333;
+  font-weight: 400;
+}
+
+/* Journey Section */
+.journey-section {
+  margin-bottom: 80px;
 }
 
 .journey-description {
   font-family: "Poppins", "SF Pro Display", "Helvetica Neue", -apple-system,
     BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  font-size: 24px;
+  font-size: 32px;
   font-weight: 600;
   color: #000;
-  margin-bottom: 20px;
-  line-height: 1.4;
+  margin-bottom: 40px;
+  line-height: 1.3;
+  letter-spacing: -0.5px;
 }
 
-.journey-text {
-  font-size: 18px;
+/* Timeline */
+.timeline {
+  position: relative;
+  padding-left: 40px;
+  margin-top: 40px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    #000 0%,
+    #000 50%,
+    #e5e5e5 50%,
+    #e5e5e5 100%
+  );
+  background-size: 2px 20px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 50px;
+  padding-left: 0;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -40px;
+  top: 6px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #000;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 2px #000;
+}
+
+.timeline-year {
+  font-family: "Poppins", "SF Pro Display", "Helvetica Neue", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.timeline-content {
+  padding-left: 0;
+}
+
+.timeline-title {
+  font-family: "Poppins", "SF Pro Display", "Helvetica Neue", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 6px;
+  letter-spacing: -0.3px;
+}
+
+.timeline-subtitle {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 12px;
+  font-weight: 400;
+}
+
+.timeline-text {
+  font-size: 16px;
   line-height: 1.6;
   color: #333;
+  font-weight: 400;
 }
 
+/* Skills Section */
 .skills-section {
-  margin: 60px 0;
+  margin-bottom: 80px;
 }
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
-  margin: 40px 0;
+  margin-top: 40px;
 }
 
 .skill-category {
-  padding: 25px;
-  border-radius: 8px;
-  background-color: #f8f8f8;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 32px;
+  border: 1px solid #e5e5e5;
+  border-radius: 0;
+  background-color: transparent;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.skill-category::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background-color: #000;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .skill-category:hover {
-  background-color: #f0f0f0;
-  transform: translateY(-2px);
+  border-color: #000;
+  background-color: #fafafa;
+}
+
+.skill-category:hover::before {
+  transform: scaleY(1);
 }
 
 .skill-title {
   font-family: "Poppins", "SF Pro Display", "Helvetica Neue", -apple-system,
     BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
   color: #000;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  letter-spacing: -0.3px;
 }
 
 .skill-items {
-  font-size: 16px;
-  color: #666;
-  line-height: 1.5;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
+.skill-tag {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #333;
+  background-color: #f5f5f5;
+  border: 1px solid #e5e5e5;
+  border-radius: 0;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.skill-category:hover .skill-tag {
+  background-color: #fff;
+  border-color: #d5d5d5;
+}
+
+/* Specialties Section */
 .specialties-section {
-  margin: 60px 0;
+  margin-bottom: 80px;
 }
 
 .specialties-description {
   font-family: "Poppins", "SF Pro Display", "Helvetica Neue", -apple-system,
     BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 600;
   color: #000;
-  margin-bottom: 30px;
-  line-height: 1.4;
+  margin-bottom: 50px;
+  line-height: 1.3;
+  letter-spacing: -0.5px;
+  max-width: 800px;
 }
 
 .specialties-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 25px;
-  margin: 40px 0;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
 }
 
 .specialty-item {
-  padding: 20px;
-  border-radius: 8px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 32px;
+  border: 1px solid #e5e5e5;
+  border-radius: 0;
+  background-color: transparent;
+  position: relative;
 }
 
-.specialty-item:hover {
-  background-color: #f8f8f8;
+.specialty-number {
+  font-family: "Poppins", "SF Pro Display", "Helvetica Neue", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #999;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
 }
 
 .specialty-title {
   font-family: "Poppins", "SF Pro Display", "Helvetica Neue", -apple-system,
     BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
   color: #000;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  letter-spacing: -0.3px;
 }
 
 .specialty-text {
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 1.6;
+  color: #666;
+  font-weight: 400;
+}
+
+/* Looking Section */
+.looking-section {
+  margin-bottom: 80px;
+}
+
+.looking-description {
+  font-family: "Poppins", "SF Pro Display", "Helvetica Neue", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 24px;
+  line-height: 1.3;
+  letter-spacing: -0.5px;
+}
+
+.looking-text {
+  font-size: 18px;
+  line-height: 1.7;
   color: #333;
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+
+.looking-text:last-child {
+  margin-bottom: 0;
+}
+
+/* Passions Section */
+.passions-section {
+  margin-bottom: 80px;
+}
+
+.passions-description {
+  font-family: "Poppins", "SF Pro Display", "Helvetica Neue", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 50px;
+  line-height: 1.3;
+  letter-spacing: -0.5px;
+  max-width: 800px;
+}
+
+.passions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 0;
+}
+
+.passion-card {
+  padding: 32px;
+  border: 1px solid #e5e5e5;
+  border-radius: 0;
+  background-color: transparent;
+  transition: border-color 0.3s ease, background-color 0.3s ease,
+    box-shadow 0.3s ease;
+  transform: translateY(0) scale(1) rotate(0deg);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.passion-card:hover {
+  border-color: #f53d01;
+  background-color: #f53d01;
+  transform: translateY(-8px) scale(1.02) rotate(1deg);
+  box-shadow: 0 8px 30px rgba(245, 61, 1, 0.25);
+  transition: border-color 0.3s ease, background-color 0.3s ease,
+    box-shadow 0.3s ease, transform 0s;
+}
+
+.passion-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  color: #000;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.passion-icon svg {
+  stroke: currentColor;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.passion-card:hover .passion-icon {
+  color: #fff;
+  transform: scale(1.3) rotate(15deg) translateY(-5px);
+  animation: bounce 0.6s ease;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: scale(1.3) rotate(15deg) translateY(-5px);
+  }
+  50% {
+    transform: scale(1.4) rotate(20deg) translateY(-8px);
+  }
+}
+
+.passion-card:hover .passion-icon svg {
+  stroke: #fff;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
+}
+
+.passion-title {
+  font-family: "Poppins", "SF Pro Display", "Helvetica Neue", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 12px;
+  letter-spacing: -0.3px;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.passion-card:hover .passion-title {
+  color: #fff;
+  transform: translateX(5px);
+}
+
+.passion-text {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666;
+  font-weight: 400;
+  flex-grow: 1;
+  transition: color 0.3s ease;
+}
+
+.passion-card:hover .passion-text {
+  color: #333;
+}
+
+/* Social Links Section */
+.social-section {
+  margin-bottom: 80px;
+}
+
+.social-links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.social-link-item {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  border: 1px solid #e5e5e5;
+  border-radius: 0;
+  background-color: transparent;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.social-link-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background-color: #000;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-link-item:hover {
+  border-color: #000;
+  background-color: #fafafa;
+}
+
+.social-link-item:hover::before {
+  transform: scaleY(1);
+}
+
+.social-link-label {
+  font-family: "Poppins", "SF Pro Display", "Helvetica Neue", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 8px;
+  letter-spacing: -0.3px;
+}
+
+.social-link-url {
+  font-size: 14px;
+  color: #666;
+  font-weight: 400;
+}
+
+.social-link-item:hover .social-link-url {
+  color: #333;
+}
+
+/* CTA Section */
+.cta-section {
+  text-align: center;
+  margin-top: 100px;
+  padding: 60px 0;
+  border-top: 1px solid #e5e5e5;
+}
+
+.cta-text {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 30px;
+  font-weight: 400;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 16px 40px;
+  background-color: #000;
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  border: 1px solid #000;
+  border-radius: 0;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.cta-button:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-hero {
+    margin-bottom: 60px;
+    padding: 40px 0;
+  }
+
+  .member-image {
+    width: 140px;
+    height: 140px;
+  }
+
+  .member-name {
+    font-size: 28px;
+  }
+
+  .section-header {
+    margin-bottom: 30px;
+  }
+
+  .about-description,
+  .journey-description {
+    font-size: 24px;
+  }
+
+  .specialties-description {
+    font-size: 22px;
+  }
+
+  .skills-grid,
+  .specialties-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .skill-category,
+  .specialty-item {
+    padding: 24px;
+  }
+
+  .section-divider {
+    margin: 40px 0;
+  }
+
+  .about-content,
+  .journey-section,
+  .skills-section,
+  .specialties-section,
+  .looking-section,
+  .passions-section,
+  .social-section {
+    margin-bottom: 60px;
+  }
+
+  .looking-description,
+  .passions-description {
+    font-size: 24px;
+  }
+
+  .passions-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .passion-card {
+    padding: 24px;
+  }
+
+  .social-links-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .timeline {
+    padding-left: 30px;
+  }
+
+  .timeline-item::before {
+    left: -30px;
+    width: 14px;
+    height: 14px;
+  }
+
+  .timeline::before {
+    left: 6px;
+  }
+
+  .timeline-title {
+    font-size: 20px;
+  }
 }
