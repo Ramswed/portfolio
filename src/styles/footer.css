@@ -34,7 +34,7 @@
 
 .footer-links a:hover,
 .footer-link:hover {
-  color: #666;
+  color: #ff3300;
 }
 
 .social-links {
@@ -63,7 +63,7 @@
 }
 
 .social-link:hover {
-  background-color: #333;
+  background-color: #ff3300;
   transform: scale(1.1);
 }
 

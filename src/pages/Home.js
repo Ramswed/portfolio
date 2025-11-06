@@ -7,6 +7,8 @@ import forumImage from "../assets/images/forum.png";
 import musebarImage from "../assets/images/musebar.png";
 import patronImage from "../assets/images/patrondumuse.png";
 
+const MotionLink = motion(Link);
+
 const Home = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -135,10 +137,8 @@ const Home = () => {
         <div className="values-content">
           <p className="asterisk">＊</p>
           <p className="values-text">
-            BALLBALABBABLLBABLALLALABLALBLALBALBALBALBLABLABLABLABLALL
-            BABLABLALBALALBALBALBALBABLALBALLALALBALBABLABALALBALBALBALLBALA
-            LBALBLBALALLBAALBLALBA mais en gros ici je vais faire une petite
-            description de ce que je fais et de ce que je suis capable de faire.
+            Développeuse full-stack passionnée par la création d'interfaces modernes et fonctionnelles. 
+            Je combine design et développement pour transformer des idées en solutions concrètes.
           </p>
         </div>
       </motion.div>
@@ -153,14 +153,12 @@ const Home = () => {
         <div className="testimonials-gallery">
           <div className="testimonial-content">
             <p className="testimonial-quote">
-              Manon est parfaite rien à redire donnez lui son diplôme tout de
-              suite (Oui jsp quoi dire j'ai pas eu son retour pour l'instant
-              peut être qu'il trouve ça claqué......C'est pour ça que je le
-              floute aussi mdr)
+              Manon a su créer un site qui reflète parfaitement l'identité du Muse Bar. 
+              Le résultat est professionnel et correspond exactement à nos attentes.
             </p>
             <p className="testimonial-author">
               Hugo,{" "}
-              <Link to="/all-work" className="testimonial-link">
+              <Link to="/project/8" className="testimonial-link">
                 <em>Patron du Muse bar.</em>
               </Link>
             </p>
@@ -179,9 +177,15 @@ const Home = () => {
         viewport={{ once: true, margin: "-50px" }}
       >
         <p className="cta-text">Vous voulez discuter d'un projet? :)</p>
-        <motion.a href="/contact" className="cta-button">
+        <MotionLink
+          to="/contact"
+          className="cta-button"
+          whileHover={{
+            transition: { duration: 0.3 },
+          }}
+        >
           Contactez-moi
-        </motion.a>
+        </MotionLink>
       </motion.div>
     </main>
   );

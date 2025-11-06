@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 
 const About = () => {
   const containerVariants = {
@@ -25,18 +24,6 @@ const About = () => {
     },
   };
 
-  const titleVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: [0.4, 0, 0.2, 1],
-      },
-    },
-  };
-
   return (
     <main className="main">
       <motion.section
@@ -45,7 +32,6 @@ const About = () => {
         initial="hidden"
         animate="visible"
       >
-        {/* Hero Section */}
         <motion.div className="about-hero" variants={itemVariants}>
           <motion.div
             className="team-member"
@@ -59,7 +45,6 @@ const About = () => {
           </motion.div>
         </motion.div>
 
-        {/* About Content */}
         <motion.div className="about-content" variants={itemVariants}>
           <div className="section-header">
             <span className="section-number">01</span>
@@ -80,7 +65,6 @@ const About = () => {
           <div className="section-divider"></div>
         </motion.div>
 
-        {/* Journey Section */}
         <motion.div className="journey-section" variants={itemVariants}>
           <div className="section-header">
             <span className="section-number">02</span>
@@ -166,7 +150,6 @@ const About = () => {
           <div className="section-divider"></div>
         </motion.div>
 
-        {/* Skills Section */}
         <motion.div className="skills-section" variants={itemVariants}>
           <div className="section-header">
             <span className="section-number">03</span>
@@ -211,7 +194,6 @@ const About = () => {
           <div className="section-divider"></div>
         </motion.div>
 
-        {/* Specialties Section */}
         <motion.div className="specialties-section" variants={itemVariants}>
           <div className="section-header">
             <span className="section-number">04</span>
@@ -289,7 +271,6 @@ const About = () => {
           <div className="section-divider"></div>
         </motion.div>
 
-        {/* Looking For Section */}
         <motion.div className="looking-section" variants={itemVariants}>
           <div className="section-header">
             <span className="section-number">05</span>
@@ -316,7 +297,6 @@ const About = () => {
           <div className="section-divider"></div>
         </motion.div>
 
-        {/* Passions Section */}
         <motion.div className="passions-section" variants={itemVariants}>
           <div className="section-header">
             <span className="section-number">06</span>
@@ -425,7 +405,6 @@ const About = () => {
           <div className="section-divider"></div>
         </motion.div>
 
-        {/* Social Links Section */}
         <motion.div className="social-section" variants={itemVariants}>
           <div className="section-header">
             <span className="section-number">07</span>
@@ -461,9 +440,45 @@ const About = () => {
               <span className="social-link-url">ramswed.pro@gmail.com</span>
             </motion.a>
           </div>
+          <div className="section-divider"></div>
         </motion.div>
 
-        {/* CTA Section */}
+        <motion.div className="cv-section" variants={itemVariants}>
+          <div className="section-header">
+            <span className="section-number">08</span>
+            <p className="section-label">mon cv</p>
+          </div>
+          <div className="content-wrapper">
+            <motion.a
+              href="/cv.pdf"
+              download="CV_Manon_Leroux.pdf"
+              className="cv-download-button"
+              whileHover={{
+                transition: { duration: 0.3 },
+              }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="cv-download-icon"
+              >
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Télécharger mon CV</span>
+            </motion.a>
+          </div>
+          <div className="section-divider"></div>
+        </motion.div>
+
         <motion.div className="cta-section" variants={itemVariants}>
           <p className="cta-text">Vous voulez discuter d'un projet? :)</p>
           <motion.a

@@ -37,26 +37,29 @@ const ProjectDetail = () => {
       hasImage: true,
       image: asciiartImage,
       additionalImages: [ascii1Image, ascii2Image],
-      year: "2023 - 2024",
+      year: "2025",
       discipline: "Site Web, illustration",
       sector: "Éducation / Outils",
-      description: "Serveur web de conversion ASCII art avec thème street-art",
+      description:
+        "PROJET D'ÉCOLE - Mon tout premier projet web, un serveur de conversion ASCII art",
       longDescription:
-        "Serveur web en Go permettant de convertir du texte en art ASCII avec différents banners (shadow, standard, thinkertoy). Interface web avec thème humoristique street-art, offrant une expérience utilisateur unique pour créer des œuvres ASCII artistiques.",
+        "Mon tout premier projet en programmation web : un serveur HTTP en Go qui convertit du texte en art ASCII. Au-delà des consignes scolaires, j'ai voulu transformer cet outil simple (et franchement inutile aujourd'hui) en quelque chose de plus personnel. J'ai ajouté un thème street-art humoristique et créé des illustrations numériques 2D sur Procreate pour donner une identité visuelle unique au projet.",
       features: [
-        "Conversion texte vers ASCII art",
-        "Trois banners disponibles (shadow, standard, thinkertoy)",
-        "Interface web avec thème street-art",
-        "Gestion des erreurs HTTP appropriées",
+        "Conversion texte vers ASCII art avec 3 polices (standard, shadow, thinkertoy)",
+        "Export des résultats en TXT et HTML",
+        "Copie dans le presse-papiers",
+        "Interface web avec thème street-art personnalisé",
+        "Gestion complète des codes de statut HTTP (200, 400, 404, 500)",
       ],
-      technologies: ["Go", "HTML Templates", "HTTP Server", "ASCII Art"],
+      technologies: ["Go", "HTML Templates", "HTTP Server", "Procreate", "CSS"],
       collaborators: [{ name: "Konixy", github: "https://github.com/Konixy" }],
+      github: "https://github.com/Ramswed/convertisseurAscii",
       concept:
-        "Créer un serveur web humoristique sur le thème du street-art pour convertir du texte en art ASCII, en explorant la frontière entre technologie et art visuel.",
+        "Transformer un projet scolaire basique en quelque chose de personnel et amusant. Alors que les consignes demandaient simplement un convertisseur ASCII fonctionnel, j'ai voulu aller plus loin en créant une expérience visuelle unique avec un thème street-art humoristique et des illustrations originales. Parce qu'un outil inutile peut quand même être fun à utiliser.",
       process:
-        "Développement du serveur HTTP en Go, création des templates HTML, implémentation des algorithmes de conversion ASCII, ajout du thème street-art humoristique, gestion des codes de statut HTTP.",
+        "Développement du serveur HTTP en Go avec uniquement les packages standards, implémentation de l'algorithme de conversion ASCII caractère par caractère, création des templates HTML et du formulaire POST. Pour le côté créatif : conception du thème street-art, création d'illustrations numériques 2D sur Procreate, ajout des fonctionnalités d'export (TXT, HTML) et de copie. Respect strict des consignes (codes HTTP, structure, bonnes pratiques) tout en ajoutant ma touche personnelle.",
       results:
-        "Serveur web fonctionnel avec interface street-art, permettant la conversion de texte en art ASCII avec trois styles différents et une expérience utilisateur engageante.",
+        "Mon premier projet web. Un serveur complet avec gestion d'erreurs appropriée, une interface visuelle unique avec illustrations originales, et surtout une expérience qui montre qu'on peut s'amuser même avec un projet simple. Le projet m'a permis de découvrir le développement web.",
     },
     {
       id: 2,
@@ -70,13 +73,13 @@ const ProjectDetail = () => {
         groupie3Image,
         groupie4Image,
       ],
-      year: "2023 - 2024",
+      year: "2025",
       discipline: "Ui/ux, Site Web",
       sector: "Musique / Social",
       description:
-        "Application web moderne pour explorer et suivre des artistes de musique et leurs concerts",
+        "PROJET D'ÉCOLE - Application web moderne pour explorer et suivre des artistes de musique et leurs concerts",
       longDescription:
-        "Application web moderne pour explorer et suivre des artistes de musique et leurs concerts. Architecture complète avec backend Go et frontend Svelte, offrant une expérience immersive pour découvrir des artistes et localiser leurs concerts sur une carte interactive.",
+        "Projet de cours : application web complète pour explorer des artistes de musique et localiser leurs concerts. Architecture backend Go et frontend Svelte avec une volonté forte de créer quelque chose de moderne. Ce projet m'a fait découvrir l'importance de l'expérience utilisateur et m'a initiée au travail collaboratif via Git (branches, merges, workflow d'équipe).",
       features: [
         "Carousel d'artistes avec recherche avancée",
         "Carte interactive des concerts avec géolocalisation",
@@ -85,12 +88,14 @@ const ProjectDetail = () => {
       ],
       technologies: ["Go", "Svelte", "TypeScript", "Vite", "Docker Compose"],
       collaborators: [{ name: "Konixy", github: "https://github.com/Konixy" }],
+      github: "https://github.com/Ramswed/groupieTracker",
+      website: "https://groupie-tracker.konixy.fr/",
       concept:
-        "Créer une expérience immersive pour découvrir des artistes et localiser leurs concerts sur une carte interactive avec une interface moderne et des animations fluides.",
+        "Créer une expérience utilisateur moderne et immersive pour découvrir des artistes et localiser leurs concerts. Au-delà des consignes techniques, j'ai voulu comprendre ce qui rend une interface agréable à utiliser. Ce projet a été ma première vraie prise de conscience de l'importance de l'UX dans le développement web.",
       process:
-        "Développement de l'API REST en Go avec cache de coordonnées géographiques, création de l'interface Svelte avec typographies personnalisées, implémentation de la navigation par scroll avec indicateurs visuels.",
+        "Développement de l'API REST en Go avec cache de coordonnées géographiques, création de l'interface Svelte avec typographies personnalisées et animations fluides. Apprentissage du travail collaboratif : gestion des branches Git, merges, résolution de conflits, et organisation du workflow en équipe. Découverte de l'importance de penser l'expérience utilisateur dès la conception.",
       results:
-        "Application fonctionnelle avec architecture complète, interface moderne et responsive, et système de cache intelligent pour optimiser les performances.",
+        "Une application complète et déployée, accessible en ligne. L'interface scroll-snap offre une navigation fluide entre les sections, la carte interactive permet de visualiser facilement les concerts, et le cache optimise les performances. Le projet est en ligne et fonctionnel.",
     },
     {
       id: 3,
@@ -190,7 +195,8 @@ const ProjectDetail = () => {
       year: "2023 - 2024",
       discipline: "Site Web, communauté",
       sector: "Communauté / Nostalgie",
-      description: "Forum communautaire sur le thème Windows 95",
+      description:
+        "PROJET D'ÉCOLE -Forum communautaire sur le thème Windows 95",
       longDescription:
         "Forum web communautaire dédié à la passion pour Windows 95. Les utilisateurs peuvent s'inscrire, créer des posts et commentaires, liker/disliker les contenus, et filtrer par catégories. Interface nostalgique avec l'esthétique Windows 95 pour une expérience immersive.",
       features: [
@@ -265,12 +271,10 @@ const ProjectDetail = () => {
         "HTML5",
         "CSS3 (Variables CSS, Animations @keyframes, Media queries, Flexbox/Grid)",
         "JavaScript ES6+ (Vanilla)",
-        "Font Awesome 6.0.0",
-        "Google Fonts (Playfair Display, Poppins, Funnel Display)",
         "Architecture modulaire (fragments HTML via fetch)",
       ],
       github: "https://github.com/Ramswed/MuseBar",
-      website: "https://musebar.fr",
+      website: "http://www.musebar.fr/",
       concept:
         "Créer un site web vitrine qui capture l'esprit authentique du Muse Bar : un bar simple et sympa avec une touche soignée. Le design moderne met en valeur les couleurs et éléments du logo, reflétant l'identité du bar où « le concept c'est : pas de concept ». Une expérience digitale qui guide les visiteurs pour découvrir l'histoire, la carte, la localisation et toutes les informations pratiques du bar.",
       process:
@@ -311,25 +315,27 @@ const ProjectDetail = () => {
       hasImage: true,
       image: snsmImage,
       additionalImages: [snsm1Image, snsm2Image, snsm3Image],
-      year: "2023 - 2024",
+      year: "2025",
       discipline: "Illustration",
       sector: "Bénévolat / Sécurité",
-      description: "Badge pour la promotion SNSM 2024/2025",
+      description:
+        "Badge commémoratif bénévole pour la promotion SNSM 2024/2025",
       longDescription:
-        "Création d'un badge pour la promotion SNSM 2024/2025 basé sur leur expérience de formation et leurs meilleurs souvenirs. Projet bénévole pour les sauveteurs en mer, visant à célébrer leur parcours et leur engagement.",
+        "Projet bénévole : création d'un badge commémoratif pour la promotion 2024/2025 de la SNSM de Rouen. Cette équipe de nouveaux sauveteurs en mer voulait un badge qui concrétise leur fin de formation, en mettant en image une expérience forte qu'ils ont vécue tous ensemble, inspirée d'un souvenir commun d'un jour de leur formation.",
       features: [
-        "Design commémoratif",
-        "Représentation de l'expérience de formation",
-        "Éléments des meilleurs souvenirs",
+        "Design commémoratif personnalisé",
+        "Représentation d'un souvenir commun de formation",
+        "Éléments symboliques de la SNSM",
         "Identité visuelle de la promotion",
+        "Plusieurs versions proposées",
       ],
       technologies: ["Adobe Illustrator", "Design vectoriel", "Illustration"],
       concept:
-        "Créer un badge commémoratif qui capture l'essence de l'expérience de formation et les meilleurs souvenirs de la promotion SNSM 2024/2025, en tant que projet bénévole pour les sauveteurs en mer.",
+        "Créer un badge qui matérialise visuellement une expérience collective forte. L'objectif était de transformer un souvenir commun de formation en un objet commémoratif qui symbolise leur parcours et leur cohésion d'équipe. Un projet bénévole pour honorer leur engagement dans le sauvetage en mer.",
       process:
-        "Analyse des expériences de formation, collecte des meilleurs souvenirs, conception du badge commémoratif, intégration des éléments symboliques de la SNSM.",
+        "Échange avec l'équipe pour comprendre leur souvenir commun et identifier les éléments obligatoires à intégrer. Collaboration sur les couleurs et les emplacements des éléments pour créer plusieurs versions. L'équipe a finalement choisi la version 2, qui capturait le mieux l'essence de leur expérience partagée.",
       results:
-        "Badge commémoratif créé bénévolement pour célébrer la promotion SNSM 2024/2025 et honorer leur engagement dans le sauvetage en mer.",
+        "Badge commémoratif finalisé et validé par l'équipe, qui matérialise leur expérience de formation. Un objet symbolique qui représente leur cohésion et leur parcours commun, créé bénévolement pour célébrer leur engagement dans le sauvetage en mer.",
     },
     {
       id: 11,
@@ -427,7 +433,7 @@ const ProjectDetail = () => {
         >
           <motion.div className="project-nav" variants={itemVariants}>
             <Link to="/all-work" className="back-link">
-              ← All work
+              ← Retour aux projets
             </Link>
           </motion.div>
 
