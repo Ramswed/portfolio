@@ -274,7 +274,7 @@ const ProjectDetail = () => {
         "Architecture modulaire (fragments HTML via fetch)",
       ],
       github: "https://github.com/Ramswed/MuseBar",
-      website: "http://www.musebar.fr/",
+      website: "https://musebar.fr/",
       concept:
         "Créer un site web vitrine qui capture l'esprit authentique du Muse Bar : un bar simple et sympa avec une touche soignée. Le design moderne met en valeur les couleurs et éléments du logo, reflétant l'identité du bar où « le concept c'est : pas de concept ». Une expérience digitale qui guide les visiteurs pour découvrir l'histoire, la carte, la localisation et toutes les informations pratiques du bar.",
       process:
