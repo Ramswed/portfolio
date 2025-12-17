@@ -12,7 +12,11 @@ import groupie4Image from "../assets/images/groupietracker/groupie4.png";
 import pocketmeImage from "../assets/images/pocket.png";
 import flintImage from "../assets/images/flint.png";
 import cuistotImage from "../assets/images/cuistot.png";
-import forumImage from "../assets/images/forum.png";
+import forumImage from "../assets/images/forum/forum.png";
+import forum1Image from "../assets/images/forum/forum1.png";
+import forum2Image from "../assets/images/forum/forum2.png";
+import forum3Image from "../assets/images/forum/forum3.png";
+import apercuGif from "../assets/images/forum/aperçu.gif";
 import photoboothImage from "../assets/images/photobooth.png";
 import musebarImage from "../assets/images/musebar.png";
 import musebar1Image from "../assets/images/musebar/1haut de page.png";
@@ -48,14 +52,13 @@ const ProjectDetail = () => {
         "Conversion texte vers ASCII art avec 3 polices (standard, shadow, thinkertoy)",
         "Export des résultats en TXT et HTML",
         "Copie dans le presse-papiers",
-        "Interface web avec thème street-art personnalisé",
         "Gestion complète des codes de statut HTTP (200, 400, 404, 500)",
       ],
       technologies: ["Go", "HTML Templates", "HTTP Server", "Procreate", "CSS"],
       collaborators: [{ name: "Konixy", github: "https://github.com/Konixy" }],
       github: "https://github.com/Ramswed/convertisseurAscii",
       concept:
-        "Transformer un projet scolaire basique en quelque chose de personnel et amusant. Alors que les consignes demandaient simplement un convertisseur ASCII fonctionnel, j'ai voulu aller plus loin en créant une expérience visuelle unique avec un thème street-art humoristique et des illustrations originales. Parce qu'un outil inutile peut quand même être fun à utiliser.",
+        "Transformer un projet scolaire basique en quelque chose de personnel et amusant. Alors que les consignes demandaient un convertisseur ASCII fonctionnel, j'ai voulu aller plus loin en créant une expérience visuelle unique avec un thème street-art/humoristique (j'adore ''Lascars'' de Eldiablo, vous connaissez ?) et des illustrations originales. Parce qu'un outil inutile peut quand même être fun à utiliser.",
       process:
         "Développement du serveur HTTP en Go avec uniquement les packages standards, implémentation de l'algorithme de conversion ASCII caractère par caractère, création des templates HTML et du formulaire POST. Pour le côté créatif : conception du thème street-art, création d'illustrations numériques 2D sur Procreate, ajout des fonctionnalités d'export (TXT, HTML) et de copie. Respect strict des consignes (codes HTTP, structure, bonnes pratiques) tout en ajoutant ma touche personnelle.",
       results:
@@ -103,25 +106,16 @@ const ProjectDetail = () => {
       category: "Application mobile",
       hasImage: true,
       image: pocketmeImage,
-      year: "2023 - 2024",
+      year: "2025",
       discipline: "Application mobile",
-      sector: "Mobile / Social",
-      description: "Application mobile sociale",
-      longDescription:
-        "Application mobile sociale permettant de connecter les utilisateurs et de partager des moments.",
-      features: [
-        "Interface utilisateur intuitive",
-        "Fonctionnalités sociales",
-        "Design moderne",
-        "Expérience utilisateur optimisée",
-      ],
-      technologies: ["React Native", "Mobile", "UI/UX"],
-      concept:
-        "Créer une application mobile sociale qui connecte les utilisateurs et facilite le partage d'expériences.",
-      process:
-        "Conception de l'interface utilisateur, développement des fonctionnalités sociales, intégration des technologies mobiles, tests et optimisations.",
-      results:
-        "Application mobile fonctionnelle avec interface moderne et expérience utilisateur optimisée pour connecter les utilisateurs.",
+      sector: "Mobile / Utilitaires",
+      description: "!!!⚙️!!! En cours de développement",
+      longDescription: "...",
+      features: ["...", "...", "...", "..."],
+      technologies: ["...", "...", "...", "..."],
+      concept: "...",
+      process: "...",
+      results: "...",
     },
     {
       id: 4,
@@ -129,17 +123,18 @@ const ProjectDetail = () => {
       category: "Robotique, Arduino",
       hasImage: true,
       image: flintImage,
-      year: "2023 - 2024",
+      year: "2025 - 20??",
       discipline: "Robotique, Arduino",
-      sector: "Robotique / Éducation",
-      description: "Perroquet robot articulé avec mouvements réalistes",
+      sector: "Robotique / Psychologie",
+      description:
+        "!!!⚙️!!! Perroquet robot articulé. En cours de développement (là je cherche à imprimer le squelette, donc projet en pause (ça coûte un peu bcp cher))",
       longDescription:
         "Projet de perroquet robot très articulé où chaque os peut bouger grâce à des articulations rotoïdes sphériques. L'objectif est de créer des mouvements réalistes et fluides pour un robot perroquet interactif.",
       features: [
         "Articulations rotoïdes sphériques",
-        "Mouvements réalistes et fluides",
-        "Structure modulaire par os",
-        "Contrôle précis des articulations",
+        "Programmation des mouvements fluides",
+        "Intégration des servomoteurs",
+        "Développement du système de contrôle",
       ],
       technologies: [
         "Arduino",
@@ -149,11 +144,10 @@ const ProjectDetail = () => {
         "Servomoteurs",
       ],
       concept:
-        "Créer un perroquet robot très articulé avec des mouvements réalistes et fluides grâce à des articulations rotoïdes sphériques pour chaque os.",
+        "Créer un perroquet robot articulé (et interactif par la suite) avec des mouvements réalistes et fluides grâce à des articulations rotoïdes sphériques pour chaque os.\n Au delà du coté technique, j'essaie d'approfondir ma connaissance sur la théorie de la vallée de l'étrange (ou uncanny valley). \n Si vous voulez plus de détails vous pouvez consulter la documentation liée, sinon j'ai mis un graphique qui résume la théorie juste en dessous.",
       process:
         "Conception mécanique des articulations, programmation des mouvements fluides, intégration des servomoteurs, développement du système de contrôle.",
-      results:
-        "Robot perroquet en cours de développement avec structure articulée avancée pour des mouvements réalistes.",
+      results: "...",
     },
     {
       id: 5,
@@ -162,29 +156,15 @@ const ProjectDetail = () => {
       hasImage: true,
       image: cuistotImage,
       year: "2023 - 2024",
-      discipline: "Identité de marque, illustration",
+      discipline: "...",
       sector: "Culinaire / Événementiel",
-      description: "Identité visuelle pour un événement de cuisine villageoise",
-      longDescription:
-        "Création complète de l'identité visuelle pour un événement de cuisine dans un village. L'objectif est de créer un moment de partage et d'apprentissage culinaire où les gens se retrouvent pour cuisiner ensemble et passer un bon moment. Toute l'identité visuelle a été conçue pour cet événement communautaire.",
-      features: [
-        "Logo design pour l'événement",
-        "Charte graphique complète",
-        "Supports de communication",
-        "Identité visuelle événementielle",
-      ],
-      technologies: [
-        "Adobe Illustrator",
-        "Adobe Photoshop",
-        "Design graphique",
-        "Branding",
-      ],
-      concept:
-        "Créer une identité visuelle chaleureuse et accueillante pour un événement de cuisine villageoise qui rassemble les gens autour du partage et de l'apprentissage culinaire.",
-      process:
-        "Analyse du concept d'événement, création du logo, développement de la charte graphique, conception des supports de communication pour l'événement.",
-      results:
-        "Identité visuelle complète et cohérente qui capture l'esprit communautaire et chaleureux de l'événement de cuisine villageoise.",
+      description: "!!!⚙️!!! En cours de développement",
+      longDescription: "...",
+      features: ["...", "...", "...", "..."],
+      technologies: ["...", "...", "...", "..."],
+      concept: "...",
+      process: "...",
+      results: "...",
     },
     {
       id: 6,
@@ -192,11 +172,11 @@ const ProjectDetail = () => {
       category: "Site Web, communauté",
       hasImage: true,
       image: forumImage,
-      year: "2023 - 2024",
+      year: "2025",
       discipline: "Site Web, communauté",
       sector: "Communauté / Nostalgie",
-      description:
-        "PROJET D'ÉCOLE -Forum communautaire sur le thème Windows 95",
+      description: "PROJET D'ÉCOLE - Forum pour les fans de Windows 95",
+      additionalImages: [forum1Image, forum2Image, forum3Image, apercuGif],
       longDescription:
         "Forum web communautaire dédié à la passion pour Windows 95. Les utilisateurs peuvent s'inscrire, créer des posts et commentaires, liker/disliker les contenus, et filtrer par catégories. Interface nostalgique avec l'esthétique Windows 95 pour une expérience immersive.",
       features: [
@@ -205,17 +185,25 @@ const ProjectDetail = () => {
         "Système de likes/dislikes",
         "Filtrage par catégories et posts likés",
       ],
-      technologies: ["Go", "SQLite", "HTML", "CSS", "Docker", "bcrypt"],
+      technologies: [
+        "Go",
+        "SQLite3",
+        "HTML/CSS/JavaScript",
+        "Docker",
+        "nginx",
+        "bcrypt/UUID",
+      ],
       collaborators: [
         { name: "Konixy", github: "https://github.com/Konixy" },
         { name: "VergneElliot", github: "https://github.com/VergneElliot" },
       ],
+      github: "https://github.com/Ramswed/windows95fanatiksForum",
       concept:
-        "Créer un forum communautaire nostalgique sur le thème Windows 95 où les passionnés peuvent partager leur amour pour ce système d'exploitation emblématique.",
+        "Le but de ce projet était de créer un forum tout simplement. Les consignes de l'école m'ont laissé la liberté d'en faire un projet fun!! C'est un peu une caricature des anciens forums ''niches'' qui existent sur le web.",
       process:
-        "Développement backend en Go avec SQLite, création de l'interface nostalgique Windows 95, implémentation du système d'authentification et des fonctionnalités communautaires, conteneurisation avec Docker.",
+        "Développement backend en Go avec SQLite3. Ma mission était de reproduire à l'identique l'interface de Windows 95. Ensuite, on a implémenté le système d'authentification et les fonctionnalités communautaires, puis conteneurisé avec Docker.",
       results:
-        "Forum fonctionnel avec interface nostalgique Windows 95, système d'authentification sécurisé, et communauté active de passionnés.",
+        "Forum fonctionnel avec l'interface EMBLÉMATIQUE de Windows 95, système d'authentification sécurisé, et communauté (factice malheureusement) active de passionnés.",
     },
     {
       id: 7,
@@ -223,25 +211,16 @@ const ProjectDetail = () => {
       category: "Site web, illustration",
       hasImage: true,
       image: photoboothImage,
-      year: "2023 - 2024",
-      discipline: "Site web, illustration",
-      sector: "Événementiel / Photo",
-      description: "Photobooth avec histoire et limitation quotidienne",
-      longDescription:
-        "Application web de photobooth avec une histoire immersive où les utilisateurs ne peuvent prendre qu'une photo par jour. Le projet combine créativité et contrainte temporelle pour créer une expérience unique et mémorable.",
-      features: [
-        "Système de limitation quotidienne",
-        "Histoire immersive",
-        "Interface de photobooth",
-        "Expérience narrative",
-      ],
-      technologies: ["React", "WebRTC", "Canvas API", "Base de données"],
-      concept:
-        "Créer un photobooth avec une histoire où la limitation d'une photo par jour ajoute de la valeur et de l'anticipation à l'expérience utilisateur.",
-      process:
-        "Développement du concept narratif, création de l'interface de photobooth, implémentation du système de limitation quotidienne, intégration de l'histoire.",
-      results:
-        "Projet en cours de développement avec concept innovant combinant photobooth et storytelling.",
+      year: "20??",
+      discipline: "...",
+      sector: "...",
+      description: "!!!⚙️!!! En cours de développement.",
+      longDescription: "...",
+      features: ["...", "...", "...", "..."],
+      technologies: ["...", "...", "...", "..."],
+      concept: "...",
+      process: "...",
+      results: "...",
     },
     {
       id: 8,
@@ -288,25 +267,16 @@ const ProjectDetail = () => {
       category: "Application mobile, IA",
       hasImage: true,
       image: dreamImage,
-      year: "2023 - 2024",
+      year: "2025 - 20??",
       discipline: "Application mobile, IA",
       sector: "Bien-être / Mobile",
-      description: "Application mobile de suivi de rêves avec IA",
-      longDescription:
-        "Application mobile innovante utilisant l'intelligence artificielle pour analyser et interpréter les rêves. Le projet combine technologie et bien-être pour créer une expérience unique de découverte de soi.",
-      features: [
-        "Journal de rêves",
-        "Analyse IA",
-        "Communauté",
-        "Statistiques personnelles",
-      ],
-      technologies: ["React Native", "Python", "Machine Learning", "Firebase"],
-      concept:
-        "Explorer le monde mystérieux des rêves grâce à la technologie, en offrant des outils d'analyse et une communauté de partage pour mieux comprendre ses rêves.",
-      process:
-        "Développement du concept d'analyse IA, création de l'interface mobile, implémentation du système de communauté, intégration des fonctionnalités de bien-être.",
-      results:
-        "Projet en cours de développement avec concept innovant combinant IA et bien-être pour l'analyse des rêves.",
+      description: "En cours de développement, promis je me dépèche !!",
+      longDescription: "...",
+      features: ["...", "...", "...", "..."],
+      technologies: ["...", "...", "...", "..."],
+      concept: "...",
+      process: "...",
+      results: "...",
     },
     {
       id: 10,
@@ -339,37 +309,20 @@ const ProjectDetail = () => {
     },
     {
       id: 11,
-      title: "Vestia",
-      category: "Application mobile, illustration",
+      title: "Visualisation de neurones",
+      category: "Science",
       hasImage: true,
       image: vestiaImage,
-      year: "2023 - 2024",
-      discipline: "Application mobile, illustration",
-      sector: "Mode / Mobile",
-      description: "Application météo conseillant sur la tenue vestimentaire",
-      longDescription:
-        "Application météo qui conseille sur la tenue vestimentaire en fonction des variations météorologiques. Projet collaboratif avec développement backend par [@Phiphilio](https://github.com/Phiphilio) et design UX/UI par Manon Leroux.",
-      features: [
-        "Conseils vestimentaires basés sur la météo",
-        "Interface utilisateur intuitive",
-        "Design UX/UI personnalisé",
-        "Recommandations adaptatives",
-      ],
-      technologies: [
-        "React Native",
-        "UX/UI Design",
-        "Illustration",
-        "API météo",
-      ],
-      collaborators: [
-        { name: "Phiphilio", github: "https://github.com/Phiphilio" },
-      ],
-      concept:
-        "Créer une application qui combine données météorologiques et conseils vestimentaires pour aider les utilisateurs à s'habiller de manière appropriée selon les conditions météo.",
-      process:
-        "Collaboration avec le développeur backend, conception de l'interface utilisateur, création du design UX/UI, intégration des conseils vestimentaires basés sur la météo.",
-      results:
-        "Application fonctionnelle avec interface utilisateur soignée, offrant des conseils vestimentaires personnalisés selon les conditions météorologiques.",
+      year: "2026",
+      discipline: "Science",
+      sector: "Science",
+      description: "...",
+      longDescription: "...",
+      features: ["...", "...", "...", "..."],
+      technologies: ["...", "...", "...", "..."],
+      concept: "...",
+      process: "...",
+      results: "...",
     },
   ];
 

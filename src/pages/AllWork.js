@@ -6,7 +6,7 @@ import groupieImage from "../assets/images/groupietracker/groupie .png";
 import pocketmeImage from "../assets/images/pocket.png";
 import flintImage from "../assets/images/flint.png";
 import cuistotImage from "../assets/images/cuistot.png";
-import forumImage from "../assets/images/forum.png";
+import forumImage from "../assets/images/forum/forum.png";
 import photoboothImage from "../assets/images/photobooth.png";
 import musebarImage from "../assets/images/musebar.png";
 import dreamImage from "../assets/images/dream.png";

@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
 import asciiartImage from "../assets/images/asciiart/asciiart.png";
 import flintImage from "../assets/images/flint.png";
-import forumImage from "../assets/images/forum.png";
+import forumImage from "../assets/images/forum/forum.png";
 import musebarImage from "../assets/images/musebar.png";
 import patronImage from "../assets/images/patrondumuse.png";
 
@@ -137,8 +137,9 @@ const Home = () => {
         <div className="values-content">
           <p className="asterisk">＊</p>
           <p className="values-text">
-            Développeuse full-stack passionnée par la création d'interfaces modernes et fonctionnelles. 
-            Je combine design et développement pour transformer des idées en solutions concrètes.
+            Développeuse full-stack passionnée par la création d'interfaces
+            modernes et fonctionnelles. Je combine design et développement pour
+            transformer des idées en solutions concrètes.
           </p>
         </div>
       </motion.div>
@@ -153,8 +154,9 @@ const Home = () => {
         <div className="testimonials-gallery">
           <div className="testimonial-content">
             <p className="testimonial-quote">
-              Manon a su créer un site qui reflète parfaitement l'identité du Muse Bar. 
-              Le résultat est professionnel et correspond exactement à nos attentes.
+              Manon a su créer un site qui reflète parfaitement l'identité du
+              Muse Bar. Le résultat est professionnel et correspond exactement à
+              nos attentes.
             </p>
             <p className="testimonial-author">
               Hugo,{" "}
