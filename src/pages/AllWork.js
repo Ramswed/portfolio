@@ -4,14 +4,15 @@ import { Link } from "react-router-dom";
 import asciiartImage from "../assets/images/asciiart/asciiart.png";
 import groupieImage from "../assets/images/groupietracker/groupie .png";
 import pocketmeImage from "../assets/images/pocket.png";
-import flintImage from "../assets/images/flint.png";
-import cuistotImage from "../assets/images/cuistot.png";
+import flintImage from "../assets/images/flint/flint.png";
+import cuistotImage from "../assets/images/cuistot/cuistot.png";
 import forumImage from "../assets/images/forum/forum.png";
 import photoboothImage from "../assets/images/photobooth.png";
 import musebarImage from "../assets/images/musebar.png";
-import dreamImage from "../assets/images/dream.png";
 import snsmImage from "../assets/images/snsm/snsm.png";
 import vestiaImage from "../assets/images/vestia.png";
+import childandbookImage from "../assets/images/childandbook.png";
+import horschampImage from "../assets/images/horschamps/horschamp.png";
 
 const AllWork = () => {
   const projects = [
@@ -45,7 +46,7 @@ const AllWork = () => {
     },
     {
       id: 5,
-      title: "Cuistots Sauvages",
+      title: "Le Goût du Nous",
       category: "Identité de marque, illustration",
       hasImage: true,
       image: cuistotImage,
@@ -72,13 +73,6 @@ const AllWork = () => {
       image: musebarImage,
     },
     {
-      id: 9,
-      title: "Dream Catcher",
-      category: "Application mobile, IA",
-      hasImage: true,
-      image: dreamImage,
-    },
-    {
       id: 10,
       title: "Badge SNSM Rouen",
       category: "Illustration",
@@ -87,10 +81,24 @@ const AllWork = () => {
     },
     {
       id: 11,
-      title: "Vestia",
-      category: "Application mobile, illustration",
+      title: "NeuroScope",
+      category: "Science",
       hasImage: true,
       image: vestiaImage,
+    },
+    {
+      id: 12,
+      title: "the child & the book",
+      category: "Graphisme",
+      hasImage: true,
+      image: childandbookImage,
+    },
+    {
+      id: 13,
+      title: "Hors-champ",
+      category: "Sérigraphie",
+      hasImage: true,
+      image: horschampImage,
     },
   ];
 
@@ -128,6 +136,48 @@ const AllWork = () => {
     },
   };
 
+  const category1Order = [3, 7, 11, 8, 4]; // Ordre spécifique
+  const category1Projects = category1Order
+    .map((id) => projects.find((p) => p.id === id))
+    .filter(Boolean);
+
+  const category1Row1 = category1Projects.slice(0, 2); // Pocket-me, Photobooth (2 projets)
+  const category1Row2 = category1Projects.slice(2); // NeuroScope, Muse Bar, Capitaine Flint (3 projets)
+
+  const category2Order = [5, 13, 12, 10]; // Ordre spécifique
+  const category2Projects = category2Order
+    .map((id) => projects.find((p) => p.id === id))
+    .filter(Boolean); // Le Goût du Nous, Hors-champ, the child & the book, Badge SNSM Rouen
+
+  const category3Projects = projects.filter((p) => [1, 2, 6].includes(p.id)); // Ascii Convertisseur, Groupie Tracker, Forum
+
+  const renderProjectsGrid = (projectsList, className = "projects-grid") => (
+    <motion.div
+      className={className}
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+    >
+      {projectsList.map((project) => (
+        <motion.article
+          key={project.id}
+          className="project-card"
+          variants={itemVariants}
+        >
+          <Link to={`/project/${project.id}`} className="project-link">
+            {project.hasImage && (
+              <div className="project-image">
+                <img src={project.image} alt={project.title} />
+              </div>
+            )}
+            <h2 className="project-title">{project.title}</h2>
+            <p className="project-category">{project.category}</p>
+          </Link>
+        </motion.article>
+      ))}
+    </motion.div>
+  );
+
   return (
     <main className="main">
       <motion.h1
@@ -139,35 +189,33 @@ const AllWork = () => {
         Mes projets
       </motion.h1>
 
-      <motion.div
-        className="projects-grid"
-        variants={containerVariants}
+      {renderProjectsGrid(category1Row1, "projects-grid")}
+      {renderProjectsGrid(category1Row2, "projects-grid projects-grid-3cols")}
+
+      <motion.h2
+        className="category-title"
+        variants={titleVariants}
         initial="hidden"
-        animate="visible"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-50px" }}
       >
-        {projects.map((project) => (
-          <motion.article
-            key={project.id}
-            className="project-card"
-            variants={itemVariants}
-            whileHover={{
-              y: -8,
-              scale: 1.02,
-              transition: { duration: 0.3, ease: [0.4, 0, 0.2, 1] },
-            }}
-          >
-            <Link to={`/project/${project.id}`} className="project-link">
-              {project.hasImage && (
-                <div className="project-image">
-                  <img src={project.image} alt={project.title} />
-                </div>
-              )}
-              <h2 className="project-title">{project.title}</h2>
-              <p className="project-category">{project.category}</p>
-            </Link>
-          </motion.article>
-        ))}
-      </motion.div>
+        identités visuelles & illustrations
+      </motion.h2>
+      {renderProjectsGrid(category2Projects)}
+
+      <motion.h2
+        className="category-title"
+        variants={titleVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-50px" }}
+      >
+        projets d'école
+      </motion.h2>
+      {renderProjectsGrid(
+        category3Projects,
+        "projects-grid projects-grid-ascii"
+      )}
 
       <motion.div
         className="cta-section"
@@ -177,16 +225,16 @@ const AllWork = () => {
         viewport={{ once: true, margin: "-50px" }}
       >
         <p className="cta-text">Vous voulez discuter d'un projet? :)</p>
-        <motion.a
-          href="/contact"
-          className="cta-button"
+        <motion.div
           whileHover={{
             y: -2,
             transition: { duration: 0.3 },
           }}
         >
-          Contactez-moi
-        </motion.a>
+          <Link to="/contact" className="cta-button">
+            Contactez-moi
+          </Link>
+        </motion.div>
       </motion.div>
     </main>
   );

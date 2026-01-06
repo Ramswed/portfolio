@@ -1,31 +1,35 @@
 import React, { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { Link } from "react-router-dom";
 import asciiartImage from "../assets/images/asciiart/asciiart.png";
-import flintImage from "../assets/images/flint.png";
-import forumImage from "../assets/images/forum/forum.png";
 import musebarImage from "../assets/images/musebar.png";
+import pocketmeImage from "../assets/images/pocket.png";
+import cuistotImage from "../assets/images/cuistot/cuistot.png";
 import patronImage from "../assets/images/patrondumuse.png";
 
 const MotionLink = motion(Link);
 
 const Home = () => {
   const containerRef = useRef(null);
+  const projectsRef = useRef(null);
   const { scrollYProgress } = useScroll({
-    target: containerRef,
+    target: projectsRef,
     offset: ["start end", "end start"],
   });
 
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.3]);
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 80,
+    damping: 40,
+    restDelta: 0.001,
+  });
+
+  const easedProgress = useTransform(smoothProgress, (value) => {
+    return 1 - Math.pow(1 - value, 2);
+  });
+
+  const scale = useTransform(easedProgress, [0, 1], [1.3, 1]);
 
   const featuredProjects = [
-    {
-      id: 6,
-      title: "Forum",
-      category: "Site Web, communauté",
-      hasImage: true,
-      image: forumImage,
-    },
     {
       id: 8,
       title: "Muse Bar",
@@ -34,18 +38,25 @@ const Home = () => {
       image: musebarImage,
     },
     {
+      id: 3,
+      title: "Pocket-me",
+      category: "Application mobile",
+      hasImage: true,
+      image: pocketmeImage,
+    },
+    {
+      id: 5,
+      title: "Le Goût du Nous",
+      category: "Identité de marque, illustration",
+      hasImage: true,
+      image: cuistotImage,
+    },
+    {
       id: 1,
       title: "Ascii Convertisseur",
       category: "Site Web, illustration",
       hasImage: true,
       image: asciiartImage,
-    },
-    {
-      id: 4,
-      title: "Capitaine Flint",
-      category: "Robotique, Arduino",
-      hasImage: true,
-      image: flintImage,
     },
   ];
 
@@ -97,6 +108,7 @@ const Home = () => {
       </motion.h1>
 
       <motion.div
+        ref={projectsRef}
         className="featured-projects"
         variants={containerVariants}
         initial="hidden"
@@ -137,9 +149,12 @@ const Home = () => {
         <div className="values-content">
           <p className="asterisk">＊</p>
           <p className="values-text">
-            Développeuse full-stack passionnée par la création d'interfaces
-            modernes et fonctionnelles. Je combine design et développement pour
-            transformer des idées en solutions concrètes.
+            Bonjour, je suis Manon ! ☺︎ <br />
+            J'aime transformer des idées en choses concrètes, jolies et
+            interactives. Je passe autant de temps à réfléchir à l'esthétique
+            qu'à la manière dont on interagit avec une interface. Je code, je
+            design, j'expérimente, avec l'envie de rendre les concepts plus
+            vivants, plus clairs et plus agréables à utiliser.
           </p>
         </div>
       </motion.div>
@@ -154,14 +169,16 @@ const Home = () => {
         <div className="testimonials-gallery">
           <div className="testimonial-content">
             <p className="testimonial-quote">
-              Manon a su créer un site qui reflète parfaitement l'identité du
-              Muse Bar. Le résultat est professionnel et correspond exactement à
-              nos attentes.
+              "Dès le départ, Manon a capté l’esprit du Muse Bar et a su
+              traduire nos idées en un site clair et agréable à naviguer. On
+              retrouve dans chaque détail notre identité, sans que ça paraisse
+              forcé ou trop travaillé. C’est un site simple & pratique à
+              utiliser."
             </p>
             <p className="testimonial-author">
               Hugo,{" "}
               <Link to="/project/8" className="testimonial-link">
-                <em>Patron du Muse bar.</em>
+                <em>Muse bar.</em>
               </Link>
             </p>
           </div>
@@ -178,7 +195,7 @@ const Home = () => {
         transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
         viewport={{ once: true, margin: "-50px" }}
       >
-        <p className="cta-text">Vous voulez discuter d'un projet? :)</p>
+        <p className="cta-text">Vous voulez discuter d'un projet? ✌︎︎</p>
         <MotionLink
           to="/contact"
           className="cta-button"

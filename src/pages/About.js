@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const About = () => {
   const containerVariants = {
@@ -481,16 +482,16 @@ const About = () => {
 
         <motion.div className="cta-section" variants={itemVariants}>
           <p className="cta-text">Vous voulez discuter d'un projet? :)</p>
-          <motion.a
-            href="/contact"
-            className="cta-button"
+          <motion.div
             whileHover={{
               y: -2,
               transition: { duration: 0.3 },
             }}
           >
-            Contactez-moi
-          </motion.a>
+            <Link to="/contact" className="cta-button">
+              Contactez-moi
+            </Link>
+          </motion.div>
         </motion.div>
       </motion.section>
     </main>
