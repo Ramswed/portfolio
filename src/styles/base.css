@@ -11,6 +11,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: #f53d01 transparent;
 }
 
 body {
@@ -39,11 +41,6 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #e03500;
-}
-
-* {
-  scrollbar-width: thin;
-  scrollbar-color: #f53d01 transparent;
 }
 
 html,

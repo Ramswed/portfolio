@@ -1,8 +1,39 @@
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 40px;
-  margin-bottom: 60px;
+  margin-bottom: 80px;
+}
+
+.projects-grid-3cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.projects-grid-ascii {
+  grid-template-columns: 2fr 1fr 1fr;
+}
+
+.projects-grid:first-of-type {
+  margin-top: 0;
+}
+
+.category-title {
+  font-family: "Poppins", "SF Pro Display", "Helvetica Neue", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 200px;
+  margin-bottom: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 0px;
+  padding-right: 100px;
+  color: #000;
+  text-align: center;
+  text-transform: uppercase;
+  border-bottom: 20px solid #0114dd;
+  width: fit-content;
+  max-width: 80%;
 }
 
 .project-row {
@@ -15,7 +46,6 @@
 .project-card {
   display: block;
   text-decoration: none;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-link {
@@ -30,7 +60,6 @@
   background-color: #e5e5e5;
   border-radius: 0;
   margin-bottom: 20px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
 }
 
@@ -38,45 +67,18 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.project-card:hover {
-  transform: translateY(-4px);
-}
-
-.project-card:hover .project-image {
-  background-color: #d5d5d5;
-  transform: scale(1.02);
-}
-
-.project-card:hover .project-image img {
-  transform: scale(1.05);
 }
 
 .project-title {
   font-family: "Poppins", "SF Pro Display", "Helvetica Neue", -apple-system,
     BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  font-size: 18px;
+  font-size: 28px;
   font-weight: 600;
-  margin-bottom: 8px;
+  margin-bottom: 7px;
   color: #000;
-  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.project-card:hover .project-title {
-  color: #333;
 }
 
 .project-category {
-  font-size: 12px;
-  color: #666;
-  line-height: 1.4;
-  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   font-family: "Poppins", "SF Pro Display", "Helvetica Neue", -apple-system,
     BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-}
-
-.project-card:hover .project-category {
-  color: #888;
 }
