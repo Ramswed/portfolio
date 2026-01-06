@@ -17,7 +17,7 @@ import forumImage from "../assets/images/forum/forum.png";
 import forum1Image from "../assets/images/forum/forum1.png";
 import forum2Image from "../assets/images/forum/forum2.png";
 import forum3Image from "../assets/images/forum/forum3.png";
-import apercuMp4 from "../assets/images/forum/aperçu.mp4";
+import apercuMp4 from "../assets/images/forum/apercu.mp4";
 import photoboothImage from "../assets/images/photobooth.png";
 import musebarImage from "../assets/images/musebar.png";
 import musebar1Image from "../assets/images/musebar/1haut de page.png";
