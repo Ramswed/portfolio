@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useParams, Link } from "react-router-dom";
 import asciiartImage from "../assets/images/asciiart/asciiart.png";
@@ -10,28 +10,55 @@ import groupie2Image from "../assets/images/groupietracker/groupie2.png";
 import groupie3Image from "../assets/images/groupietracker/groupie3.png";
 import groupie4Image from "../assets/images/groupietracker/groupie4.png";
 import pocketmeImage from "../assets/images/pocket.png";
-import flintImage from "../assets/images/flint.png";
-import cuistotImage from "../assets/images/cuistot.png";
+import flintImage from "../assets/images/flint/flint.png";
+import uncannyvalleyImage from "../assets/images/flint/uncannyvalley.jpg";
+import cuistotImage from "../assets/images/cuistot/cuistot.png";
 import forumImage from "../assets/images/forum/forum.png";
 import forum1Image from "../assets/images/forum/forum1.png";
 import forum2Image from "../assets/images/forum/forum2.png";
 import forum3Image from "../assets/images/forum/forum3.png";
-import apercuGif from "../assets/images/forum/aperçu.gif";
+import apercuMp4 from "../assets/images/forum/aperçu.mp4";
 import photoboothImage from "../assets/images/photobooth.png";
 import musebarImage from "../assets/images/musebar.png";
 import musebar1Image from "../assets/images/musebar/1haut de page.png";
 import musebar2Image from "../assets/images/musebar/2carte.png";
 import musebar3Image from "../assets/images/musebar/3notre histoire.png";
 import musebar4Image from "../assets/images/musebar/4privatiser.png";
-import dreamImage from "../assets/images/dream.png";
 import snsmImage from "../assets/images/snsm/snsm.png";
 import snsm1Image from "../assets/images/snsm/snsm00001.png";
 import snsm2Image from "../assets/images/snsm/snsm00002.png";
 import snsm3Image from "../assets/images/snsm/snsm00003.png";
 import vestiaImage from "../assets/images/vestia.png";
+import childandbookImage from "../assets/images/childandbook.png";
+import horschampImage from "../assets/images/horschamps/horschamp.png";
+import horschamps1Image from "../assets/images/horschamps/horschamps1.png";
+import horschampsvid from "../assets/images/horschamps/horschampsvid.mp4";
+import horschampsvid2 from "../assets/images/horschamps/horschampsvid2.mp4";
+import horschampsvid3 from "../assets/images/horschamps/horschampsvid3.mp4";
+import visuHC1 from "../assets/images/horschamps/visuHC1.png";
+import visuHC2 from "../assets/images/horschamps/visuHC2.png";
 
 const ProjectDetail = () => {
   const { projectId } = useParams();
+  const [lightboxMedia, setLightboxMedia] = useState(null);
+
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === "Escape" && lightboxMedia) {
+        setLightboxMedia(null);
+      }
+    };
+
+    if (lightboxMedia) {
+      document.addEventListener("keydown", handleEscape);
+      document.body.style.overflow = "hidden";
+    }
+
+    return () => {
+      document.removeEventListener("keydown", handleEscape);
+      document.body.style.overflow = "unset";
+    };
+  }, [lightboxMedia]);
 
   const projects = [
     {
@@ -123,6 +150,7 @@ const ProjectDetail = () => {
       category: "Robotique, Arduino",
       hasImage: true,
       image: flintImage,
+      additionalImages: [uncannyvalleyImage],
       year: "2025 - 20??",
       discipline: "Robotique, Arduino",
       sector: "Robotique / Psychologie",
@@ -151,7 +179,7 @@ const ProjectDetail = () => {
     },
     {
       id: 5,
-      title: "Cuistots Sauvages",
+      title: "Le Goût du Nous",
       category: "Identité de marque, illustration",
       hasImage: true,
       image: cuistotImage,
@@ -176,7 +204,7 @@ const ProjectDetail = () => {
       discipline: "Site Web, communauté",
       sector: "Communauté / Nostalgie",
       description: "PROJET D'ÉCOLE - Forum pour les fans de Windows 95",
-      additionalImages: [forum1Image, forum2Image, forum3Image, apercuGif],
+      additionalImages: [forum1Image, forum2Image, forum3Image, apercuMp4],
       longDescription:
         "Forum web communautaire dédié à la passion pour Windows 95. Les utilisateurs peuvent s'inscrire, créer des posts et commentaires, liker/disliker les contenus, et filtrer par catégories. Interface nostalgique avec l'esthétique Windows 95 pour une expérience immersive.",
       features: [
@@ -262,23 +290,6 @@ const ProjectDetail = () => {
         "Site web complet et fonctionnel (v1.0) accessible sur musebar.fr. Le projet a été livré avec succès et rencontre une excellente réception de la part du client. Le site répond parfaitement aux objectifs initiaux en reflétant l'identité authentique du bar tout en offrant une expérience utilisateur simple et efficace. Tous les objectifs ont été atteints avec une solution qui capture l'essence du Muse Bar et répond à l'ensemble des besoins identifiés lors de la phase de conception.",
     },
     {
-      id: 9,
-      title: "Dream Catcher",
-      category: "Application mobile, IA",
-      hasImage: true,
-      image: dreamImage,
-      year: "2025 - 20??",
-      discipline: "Application mobile, IA",
-      sector: "Bien-être / Mobile",
-      description: "En cours de développement, promis je me dépèche !!",
-      longDescription: "...",
-      features: ["...", "...", "...", "..."],
-      technologies: ["...", "...", "...", "..."],
-      concept: "...",
-      process: "...",
-      results: "...",
-    },
-    {
       id: 10,
       title: "Badge SNSM Rouen",
       category: "Illustration",
@@ -309,13 +320,53 @@ const ProjectDetail = () => {
     },
     {
       id: 11,
-      title: "Visualisation de neurones",
+      title: "NeuroScope",
       category: "Science",
       hasImage: true,
       image: vestiaImage,
       year: "2026",
       discipline: "Science",
       sector: "Science",
+      description: "...",
+      longDescription: "...",
+      features: ["...", "...", "...", "..."],
+      technologies: ["...", "...", "...", "..."],
+      concept: "...",
+      process: "...",
+      results: "...",
+    },
+    {
+      id: 12,
+      title: "the child & the book",
+      category: "Graphisme",
+      hasImage: true,
+      image: childandbookImage,
+      year: "20??",
+      discipline: "Graphisme",
+      sector: "...",
+      description: "...",
+      longDescription: "...",
+      features: ["...", "...", "...", "..."],
+      technologies: ["...", "...", "...", "..."],
+      concept: "...",
+      process: "...",
+      results: "...",
+    },
+    {
+      id: 13,
+      title: "Hors-champ",
+      category: "Sérigraphie",
+      hasImage: true,
+      image: horschampImage,
+      additionalImages: [
+        horschamps1Image,
+        horschampsvid3,
+        horschampsvid2,
+        horschampsvid,
+      ],
+      year: "20??",
+      discipline: "Sérigraphie",
+      sector: "...",
       description: "...",
       longDescription: "...",
       features: ["...", "...", "...", "..."],
@@ -444,15 +495,87 @@ const ProjectDetail = () => {
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
           >
-            {project.additionalImages.map((image, index) => (
-              <motion.div
-                key={index}
-                className="process-image"
-                variants={itemVariants}
-              >
-                <img src={image} alt={`${project.title} - ${index + 1}`} />
-              </motion.div>
-            ))}
+            {project.additionalImages.map((media, index) => {
+              const isVideo =
+                media === horschampsvid ||
+                media === horschampsvid2 ||
+                media === horschampsvid3 ||
+                (typeof media === "string" &&
+                  (media.includes(".mp4") ||
+                    media.includes(".mov") ||
+                    media.includes(".webm")));
+
+              const isAutoPlayVideo =
+                media === horschampsvid || media === apercuMp4;
+
+              let posterImage = undefined;
+              if (media === horschampsvid3) {
+                posterImage = visuHC1;
+              } else if (media === horschampsvid2) {
+                posterImage = visuHC2;
+              }
+
+              const isGif = typeof media === "string" && media.includes(".gif");
+
+              return (
+                <motion.div
+                  key={index}
+                  className="process-image"
+                  variants={itemVariants}
+                >
+                  {isVideo ? (
+                    <video
+                      src={media}
+                      controls={!isAutoPlayVideo}
+                      controlsList={!isAutoPlayVideo ? "nodownload" : undefined}
+                      autoPlay={isAutoPlayVideo}
+                      loop={isAutoPlayVideo}
+                      muted={isAutoPlayVideo}
+                      playsInline={isAutoPlayVideo}
+                      poster={posterImage}
+                      onPause={(e) => {
+                        if (isAutoPlayVideo) {
+                          e.target.play();
+                        }
+                      }}
+                      onContextMenu={(e) => e.preventDefault()}
+                      onDragStart={(e) => e.preventDefault()}
+                      draggable="false"
+                      onClick={() => {
+                        if (!isAutoPlayVideo) {
+                          setLightboxMedia({ src: media, type: "video" });
+                        }
+                      }}
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                        borderRadius: "8px",
+                        pointerEvents: isAutoPlayVideo ? "none" : "auto",
+                        cursor: isAutoPlayVideo ? "default" : "pointer",
+                      }}
+                    >
+                      Votre navigateur ne supporte pas la lecture de vidéos.
+                    </video>
+                  ) : (
+                    <img
+                      src={media}
+                      alt={`${project.title} - ${index + 1}`}
+                      onClick={() =>
+                        setLightboxMedia({
+                          src: media,
+                          type: isGif ? "gif" : "image",
+                        })
+                      }
+                      onContextMenu={(e) => e.preventDefault()}
+                      onDragStart={(e) => e.preventDefault()}
+                      draggable="false"
+                      style={{ cursor: "pointer" }}
+                    />
+                  )}
+                </motion.div>
+              );
+            })}
           </motion.div>
         )}
 
@@ -632,6 +755,55 @@ const ProjectDetail = () => {
           </motion.div>
         </motion.section>
       </div>
+
+      {lightboxMedia && (
+        <motion.div
+          className="lightbox-overlay"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={() => setLightboxMedia(null)}
+        >
+          <motion.div
+            className="lightbox-content"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.8, opacity: 0 }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className="lightbox-close"
+              onClick={() => setLightboxMedia(null)}
+              aria-label="Fermer"
+            >
+              ×
+            </button>
+            {lightboxMedia.type === "video" ? (
+              <video
+                src={lightboxMedia.src}
+                controls
+                controlsList="nodownload"
+                autoPlay
+                className="lightbox-video"
+                onContextMenu={(e) => e.preventDefault()}
+                onDragStart={(e) => e.preventDefault()}
+                draggable="false"
+              >
+                Votre navigateur ne supporte pas la lecture de vidéos.
+              </video>
+            ) : (
+              <img
+                src={lightboxMedia.src}
+                alt={`${project.title} - Vue agrandie`}
+                className="lightbox-image"
+                onContextMenu={(e) => e.preventDefault()}
+                onDragStart={(e) => e.preventDefault()}
+                draggable="false"
+              />
+            )}
+          </motion.div>
+        </motion.div>
+      )}
     </div>
   );
 };
