@@ -69,7 +69,7 @@ const ProjectDetail = () => {
       image: asciiartImage,
       additionalImages: [ascii1Image, ascii2Image],
       year: "2025",
-      discipline: "Site Web, illustration",
+      discipline: "Site Web",
       sector: "Éducation / Outils",
       description:
         "PROJET D'ÉCOLE - Mon tout premier projet web, un serveur de conversion ASCII art",
@@ -94,7 +94,7 @@ const ProjectDetail = () => {
     {
       id: 2,
       title: "Groupie Tracker",
-      category: "Ui/ux, Site Web",
+      category: "Site Web",
       hasImage: true,
       image: groupieImage,
       additionalImages: [
@@ -136,7 +136,7 @@ const ProjectDetail = () => {
       year: "2025",
       discipline: "Application mobile",
       sector: "Mobile / Utilitaires",
-      description: "!!!⚙️!!! En cours de développement",
+      description: "!!!!! En cours de développement",
       longDescription: "...",
       features: ["...", "...", "...", "..."],
       technologies: ["...", "...", "...", "..."],
@@ -147,7 +147,7 @@ const ProjectDetail = () => {
     {
       id: 4,
       title: "Capitaine Flint",
-      category: "Robotique, Arduino",
+      category: "Robotique",
       hasImage: true,
       image: flintImage,
       additionalImages: [uncannyvalleyImage],
@@ -155,7 +155,7 @@ const ProjectDetail = () => {
       discipline: "Robotique, Arduino",
       sector: "Robotique / Psychologie",
       description:
-        "!!!⚙️!!! Perroquet robot articulé. En cours de développement (là je cherche à imprimer le squelette, donc projet en pause (ça coûte un peu bcp cher))",
+        "!!!!! Perroquet robot articulé. En cours de développement (là je cherche à imprimer le squelette, donc projet en pause (ça coûte un peu bcp cher))",
       longDescription:
         "Projet de perroquet robot très articulé où chaque os peut bouger grâce à des articulations rotoïdes sphériques. L'objectif est de créer des mouvements réalistes et fluides pour un robot perroquet interactif.",
       features: [
@@ -180,13 +180,13 @@ const ProjectDetail = () => {
     {
       id: 5,
       title: "Le Goût du Nous",
-      category: "Identité de marque, illustration",
+      category: "Identité Visuelle",
       hasImage: true,
       image: cuistotImage,
       year: "2023 - 2024",
       discipline: "...",
       sector: "Culinaire / Événementiel",
-      description: "!!!⚙️!!! En cours de développement",
+      description: "!!!!! En cours de développement",
       longDescription: "...",
       features: ["...", "...", "...", "..."],
       technologies: ["...", "...", "...", "..."],
@@ -196,12 +196,12 @@ const ProjectDetail = () => {
     },
     {
       id: 6,
-      title: "Forum",
-      category: "Site Web, communauté",
+      title: "Windows 95 Fanatics",
+      category: "Site Web, forum",
       hasImage: true,
       image: forumImage,
       year: "2025",
-      discipline: "Site Web, communauté",
+      discipline: "Site Web, forum",
       sector: "Communauté / Nostalgie",
       description: "PROJET D'ÉCOLE - Forum pour les fans de Windows 95",
       additionalImages: [forum1Image, forum2Image, forum3Image, apercuMp4],
@@ -236,7 +236,7 @@ const ProjectDetail = () => {
     {
       id: 7,
       title: "Photobooth",
-      category: "Site web, illustration",
+      category: "Application mobile",
       hasImage: true,
       image: photoboothImage,
       year: "20??",
@@ -253,7 +253,7 @@ const ProjectDetail = () => {
     {
       id: 8,
       title: "Muse Bar",
-      category: "Site Vitrine, ui/ux",
+      category: "Site Web",
       hasImage: true,
       image: musebarImage,
       additionalImages: [
@@ -263,7 +263,7 @@ const ProjectDetail = () => {
         musebar4Image,
       ],
       year: "2025",
-      discipline: "Site Vitrine, ui/ux",
+      discipline: "Site Web, Vitrine",
       sector: "Service & Restauration",
       description: "Site web vitrine pour le Muse Bar, un bar Rouennais",
       longDescription:
@@ -321,7 +321,7 @@ const ProjectDetail = () => {
     {
       id: 11,
       title: "NeuroScope",
-      category: "Science",
+      category: "Site Web",
       hasImage: true,
       image: vestiaImage,
       year: "2026",
@@ -338,7 +338,7 @@ const ProjectDetail = () => {
     {
       id: 12,
       title: "the child & the book",
-      category: "Graphisme",
+      category: "Identité Visuelle",
       hasImage: true,
       image: childandbookImage,
       year: "20??",
