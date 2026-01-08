@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import asciiartImage from "../assets/images/asciiart/asciiart.png";
 import musebarImage from "../assets/images/musebar.png";
 import pocketmeImage from "../assets/images/pocket.png";
-import cuistotImage from "../assets/images/cuistot/cuistot.png";
+import photoboothImage from "../assets/images/photobooth.png";
 import patronImage from "../assets/images/patrondumuse.png";
 
 const MotionLink = motion(Link);
@@ -45,11 +45,11 @@ const Home = () => {
       image: pocketmeImage,
     },
     {
-      id: 5,
-      title: "Le Goût du Nous",
-      category: "Identité de marque, illustration",
+      id: 7,
+      title: "PhotoKabine",
+      category: "Application mobile",
       hasImage: true,
-      image: cuistotImage,
+      image: photoboothImage,
     },
     {
       id: 1,
