@@ -60,7 +60,7 @@ const AllWork = () => {
     },
     {
       id: 7,
-      title: "Photobooth",
+      title: "PhotoKabine",
       category: "Application mobile",
       hasImage: true,
       image: photoboothImage,
@@ -141,7 +141,7 @@ const AllWork = () => {
     .map((id) => projects.find((p) => p.id === id))
     .filter(Boolean);
 
-  const category1Row1 = category1Projects.slice(0, 2); // Pocket-me, Photobooth (2 projets)
+  const category1Row1 = category1Projects.slice(0, 2); // Pocket-me, PhotoKabine (2 projets)
   const category1Row2 = category1Projects.slice(2); // NeuroScope, Muse Bar, Capitaine Flint (3 projets)
 
   const category2Order = [5, 13, 12, 10]; // Ordre spécifique

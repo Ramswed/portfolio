@@ -235,7 +235,7 @@ const ProjectDetail = () => {
     },
     {
       id: 7,
-      title: "Photobooth",
+      title: "PhotoKabine",
       category: "Application mobile",
       hasImage: true,
       image: photoboothImage,
