@@ -3,15 +3,12 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import asciiartImage from "../assets/images/asciiart/asciiart.png";
 import groupieImage from "../assets/images/groupietracker/groupie .png";
-import pocketmeImage from "../assets/images/pocket.png";
+import pocketmeImage from "../assets/images/pocket/pocket.png";
 import flintImage from "../assets/images/flint/flint.png";
-import cuistotImage from "../assets/images/cuistot/cuistot.png";
 import forumImage from "../assets/images/forum/forum.png";
-import photoboothImage from "../assets/images/photobooth.png";
+import photoboothImage from "../assets/images/photokab/photobooth.png";
 import musebarImage from "../assets/images/musebar.png";
 import snsmImage from "../assets/images/snsm/snsm.png";
-import vestiaImage from "../assets/images/vestia.png";
-import childandbookImage from "../assets/images/childandbook.png";
 import horschampImage from "../assets/images/horschamps/horschamp.png";
 
 const AllWork = () => {
@@ -45,13 +42,6 @@ const AllWork = () => {
       image: flintImage,
     },
     {
-      id: 5,
-      title: "Le Goût du Nous",
-      category: "Identité Visuelle",
-      hasImage: true,
-      image: cuistotImage,
-    },
-    {
       id: 6,
       title: "Forum",
       category: "Site Web, Forum",
@@ -78,20 +68,6 @@ const AllWork = () => {
       category: "Illustration",
       hasImage: true,
       image: snsmImage,
-    },
-    {
-      id: 11,
-      title: "NeuroScope",
-      category: "Site Web",
-      hasImage: true,
-      image: vestiaImage,
-    },
-    {
-      id: 12,
-      title: "the child & the book",
-      category: "Identité Visuelle",
-      hasImage: true,
-      image: childandbookImage,
     },
     {
       id: 13,
@@ -136,18 +112,18 @@ const AllWork = () => {
     },
   };
 
-  const category1Order = [3, 7, 11, 8, 4]; // Ordre spécifique
+  const category1Order = [3, 7, 8, 4]; // Ordre spécifique
   const category1Projects = category1Order
     .map((id) => projects.find((p) => p.id === id))
     .filter(Boolean);
 
   const category1Row1 = category1Projects.slice(0, 2); // Pocket-me, PhotoKabine (2 projets)
-  const category1Row2 = category1Projects.slice(2); // NeuroScope, Muse Bar, Capitaine Flint (3 projets)
+  const category1Row2 = category1Projects.slice(2); // Muse Bar, Capitaine Flint (2 projets)
 
-  const category2Order = [5, 13, 12, 10]; // Ordre spécifique
+  const category2Order = [13, 10]; // Ordre spécifique
   const category2Projects = category2Order
     .map((id) => projects.find((p) => p.id === id))
-    .filter(Boolean); // Le Goût du Nous, Hors-champ, the child & the book, Badge SNSM Rouen
+    .filter(Boolean); // Hors-champ, Badge SNSM Rouen
 
   const category3Projects = projects.filter((p) => [1, 2, 6].includes(p.id)); // Ascii Convertisseur, Groupie Tracker, Forum
 

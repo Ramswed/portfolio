@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import cvPdf from "../assets/images/CV.pdf";
 
 const About = () => {
   const containerVariants = {
@@ -451,7 +452,7 @@ const About = () => {
           </div>
           <div className="content-wrapper">
             <motion.a
-              href="/cv.pdf"
+              href={cvPdf}
               download="CV_Manon_Leroux.pdf"
               className="cv-download-button"
               whileHover={{

@@ -9,16 +9,23 @@ import groupie1Image from "../assets/images/groupietracker/groupie1.png";
 import groupie2Image from "../assets/images/groupietracker/groupie2.png";
 import groupie3Image from "../assets/images/groupietracker/groupie3.png";
 import groupie4Image from "../assets/images/groupietracker/groupie4.png";
-import pocketmeImage from "../assets/images/pocket.png";
+import pocketmeImage from "../assets/images/pocket/pocket.png";
+import pocketencoursImage from "../assets/images/pocket/pocketencours.png";
 import flintImage from "../assets/images/flint/flint.png";
 import uncannyvalleyImage from "../assets/images/flint/uncannyvalley.jpg";
-import cuistotImage from "../assets/images/cuistot/cuistot.png";
+import flintBrouillonImage from "../assets/images/flint/brouillon.png";
 import forumImage from "../assets/images/forum/forum.png";
 import forum1Image from "../assets/images/forum/forum1.png";
 import forum2Image from "../assets/images/forum/forum2.png";
 import forum3Image from "../assets/images/forum/forum3.png";
 import apercuMp4 from "../assets/images/forum/apercu.mp4";
-import photoboothImage from "../assets/images/photobooth.png";
+import photoboothImage from "../assets/images/photokab/photobooth.png";
+import photokabOuiImage from "../assets/images/photokab/oui.png";
+import photokabTimelaps from "../assets/images/photokab/timelaps.mp4";
+import photokabKabin1Image from "../assets/images/photokab/kabin1.png";
+import photokabKabin2Image from "../assets/images/photokab/kabin2.png";
+import photokabKabin3Image from "../assets/images/photokab/kabin3.png";
+import photokabApercuuMp4 from "../assets/images/photokab/aperçuu.mp4";
 import musebarImage from "../assets/images/musebar.png";
 import musebar1Image from "../assets/images/musebar/1haut de page.png";
 import musebar2Image from "../assets/images/musebar/2carte.png";
@@ -28,8 +35,6 @@ import snsmImage from "../assets/images/snsm/snsm.png";
 import snsm1Image from "../assets/images/snsm/snsm00001.png";
 import snsm2Image from "../assets/images/snsm/snsm00002.png";
 import snsm3Image from "../assets/images/snsm/snsm00003.png";
-import vestiaImage from "../assets/images/vestia.png";
-import childandbookImage from "../assets/images/childandbook.png";
 import horschampImage from "../assets/images/horschamps/horschamp.png";
 import horschamps1Image from "../assets/images/horschamps/horschamps1.png";
 import horschampsvid from "../assets/images/horschamps/horschampsvid.mp4";
@@ -85,7 +90,7 @@ const ProjectDetail = () => {
       collaborators: [{ name: "Konixy", github: "https://github.com/Konixy" }],
       github: "https://github.com/Ramswed/convertisseurAscii",
       concept:
-        "Transformer un projet scolaire basique en quelque chose de personnel et amusant. Alors que les consignes demandaient un convertisseur ASCII fonctionnel, j'ai voulu aller plus loin en créant une expérience visuelle unique avec un thème street-art/humoristique (j'adore ''Lascars'' de Eldiablo, vous connaissez ?) et des illustrations originales. Parce qu'un outil inutile peut quand même être fun à utiliser.",
+        "Transformer un projet scolaire basique en quelque chose de personnel et amusant. Alors que les consignes demandaient un convertisseur ASCII fonctionnel, j'ai voulu aller plus loin en créant une expérience visuelle unique avec un thème street-art/humoristique (un peu à la  Eldiablo, dans '' Lascars'') et des illustrations originales. Parce qu'un outil inutile peut quand même être fun à utiliser.",
       process:
         "Développement du serveur HTTP en Go avec uniquement les packages standards, implémentation de l'algorithme de conversion ASCII caractère par caractère, création des templates HTML et du formulaire POST. Pour le côté créatif : conception du thème street-art, création d'illustrations numériques 2D sur Procreate, ajout des fonctionnalités d'export (TXT, HTML) et de copie. Respect strict des consignes (codes HTTP, structure, bonnes pratiques) tout en ajoutant ma touche personnelle.",
       results:
@@ -121,7 +126,7 @@ const ProjectDetail = () => {
       github: "https://github.com/Ramswed/groupieTracker",
       website: "https://groupie-tracker.konixy.fr/",
       concept:
-        "Créer une expérience utilisateur moderne et immersive pour découvrir des artistes et localiser leurs concerts. Au-delà des consignes techniques, j'ai voulu comprendre ce qui rend une interface agréable à utiliser. Ce projet a été ma première vraie prise de conscience de l'importance de l'UX dans le développement web.",
+        "Créer une expérience utilisateur moderne et immersive pour découvrir des artistes et localiser leurs concerts. Au-delà des consignes techniques, j'ai voulu comprendre ce qui rend une interface agréable à utiliser.",
       process:
         "Développement de l'API REST en Go avec cache de coordonnées géographiques, création de l'interface Svelte avec typographies personnalisées et animations fluides. Apprentissage du travail collaboratif : gestion des branches Git, merges, résolution de conflits, et organisation du workflow en équipe. Découverte de l'importance de penser l'expérience utilisateur dès la conception.",
       results:
@@ -133,16 +138,35 @@ const ProjectDetail = () => {
       category: "Application mobile",
       hasImage: true,
       image: pocketmeImage,
-      year: "2025",
+      additionalImages: [pocketencoursImage],
+      year: "2025 – 20??",
       discipline: "Application mobile",
-      sector: "Mobile / Utilitaires",
-      description: "!!!!! En cours de développement",
-      longDescription: "...",
-      features: ["...", "...", "...", "..."],
-      technologies: ["...", "...", "...", "..."],
-      concept: "...",
-      process: "...",
-      results: "...",
+      sector: "Mobile / Utilitaire",
+      description:
+        "Application mobile utilitaire — projet en cours de développement.",
+      longDescription:
+        "Pocket Me est une application mobile pensée comme un espace de stockage personnel intelligent, permettant de centraliser l'ensemble de ses cartes (physiques ou dématérialisées) ainsi que ses documents administratifs. L'application vise à simplifier la gestion du quotidien en proposant une alternative claire, organisée et sécurisée au stockage dispersé des cartes et documents.\n\nL'interface s'articule autour de deux espaces principaux : une page « Poche », dédiée aux cartes (cartes de transport, cartes professionnelles, cartes diverses), et une page « Classeur », dédiée aux documents (PDF ou autres formats). L'ambition du projet est de proposer un outil à la fois pratique, élégant et modulable, pensé pour s'adapter à des usages concrets de la vie réelle.",
+      features: [
+        "Stockage centralisé de cartes",
+        "Stockage de documents (PDF et autres formats)",
+        "Organisation par dossiers personnalisés",
+        "Sélection ciblée de cartes et documents",
+        "Génération automatique d'un PDF à partir d'un dossier",
+        "Pensée pour des usages administratifs concrets (logement, travail, démarches)",
+      ],
+      technologies: ["React Native", "Firebase"],
+      collaborators: [
+        {
+          name: "EmpireStrikesBack",
+          github: "https://github.com/EmpireStrikesBack",
+        },
+      ],
+      concept:
+        "Pocket Me est une application mobile pensée comme un espace de stockage personnel intelligent, permettant de centraliser l'ensemble de ses cartes (physiques ou dématérialisées) ainsi que ses documents administratifs. L'application vise à simplifier la gestion du quotidien en proposant une alternative claire, organisée et sécurisée au stockage dispersé des cartes et documents.\n\nL'interface s'articule autour de deux espaces principaux : une page « Poche », dédiée aux cartes, et une page « Classeur », dédiée aux documents. L'ambition du projet est de proposer un outil à la fois pratique, élégant et modulable, pensé pour s'adapter à des usages concrets de la vie réelle!!!",
+      process:
+        "Le projet est actuellement en phase de conception et de développement progressif. Le travail se concentre sur la réflexion UX/UI, l'architecture de l'application et la définition des usages prioritaires. Une attention particulière est portée à la clarté de la navigation, à l'organisation des contenus et à la création d'un système de dossiers flexible, capable de répondre à différents contextes administratifs ou personnels. Les fonctionnalités et l'expérience sont développées de manière itérative afin de garder une forte cohérence entre utilité, simplicité et design.",
+      results:
+        "À ce stade, Pocket Me prend la forme d'une application mobile fonctionnelle en cours d'évolution, avec une structure claire et une logique d'organisation déjà définie. Le projet est destiné à évoluer vers une solution complète de centralisation et de génération de documents, tout en restant simple d'usage.",
     },
     {
       id: 4,
@@ -150,49 +174,34 @@ const ProjectDetail = () => {
       category: "Robotique",
       hasImage: true,
       image: flintImage,
-      additionalImages: [uncannyvalleyImage],
-      year: "2025 - 20??",
+      additionalImages: [flintBrouillonImage, uncannyvalleyImage],
+      year: "2025 – 20??",
       discipline: "Robotique, Arduino",
       sector: "Robotique / Psychologie",
       description:
-        "!!!!! Perroquet robot articulé. En cours de développement (là je cherche à imprimer le squelette, donc projet en pause (ça coûte un peu bcp cher))",
+        "Animatronics et robotique expérimentale — projet en cours de création.",
       longDescription:
-        "Projet de perroquet robot très articulé où chaque os peut bouger grâce à des articulations rotoïdes sphériques. L'objectif est de créer des mouvements réalistes et fluides pour un robot perroquet interactif.",
+        "Ce projet consiste en la création d'un perroquet animatronique visant à reproduire les mouvements naturels d'un perroquet réel, tout en explorant la frontière entre le vivant et l'artificiel. L'objectif n'est pas de tendre vers un réalisme total, mais d'atteindre un équilibre volontairement ambigu, jouant avec l'effet d'uncanny valley : cette zone de trouble où un objet semble presque vivant, sans l'être totalement.\n\nLe projet assume cette tension en choisissant une esthétique squelettique et mécanique, éloignée de l'imitation réaliste d'un oiseau, afin de créer une présence étrange mais assumée. Le mouvement devient alors le principal vecteur de vie, plus que l'apparence.\n\nDans une seconde phase, l'animatronic est pensé pour évoluer vers un objet robotique interactif, intégrant des comportements programmés et des réponses inspirées de l'intelligence artificielle, renforçant encore cette impression de présence semi-vivante.",
       features: [
-        "Articulations rotoïdes sphériques",
-        "Programmation des mouvements fluides",
-        "Intégration des servomoteurs",
-        "Développement du système de contrôle",
+        "Animatronic articulé",
+        "Reproduction expressive des mouvements d'un perroquet",
+        "Exploration de l'uncanny valley par le mouvement",
+        "Interactions vocales (réponses, répétitions)",
+        "Comportements aléatoires programmés",
       ],
       technologies: [
+        "Scan 3D",
+        "Impression 3D",
+        "Servomoteurs et mécanismes animatroniques",
         "Arduino",
-        "C++",
-        "Électronique",
-        "Mécanique",
-        "Servomoteurs",
+        "Programmation embarquée",
       ],
       concept:
-        "Créer un perroquet robot articulé (et interactif par la suite) avec des mouvements réalistes et fluides grâce à des articulations rotoïdes sphériques pour chaque os.\n Au delà du coté technique, j'essaie d'approfondir ma connaissance sur la théorie de la vallée de l'étrange (ou uncanny valley). \n Si vous voulez plus de détails vous pouvez consulter la documentation liée, sinon j'ai mis un graphique qui résume la théorie juste en dessous.",
+        "Ce projet consiste en la création d'un perroquet animatronique visant à reproduire les mouvements naturels d'un perroquet réel, tout en explorant la frontière entre le vivant et l'artificiel. L'objectif n'est pas de tendre vers un réalisme total, mais d'atteindre un équilibre volontairement ambigu, jouant avec l'effet d'uncanny valley : cette zone de trouble où un objet semble presque vivant, sans l'être totalement.\n\nLe projet assume cette tension en choisissant une esthétique squelettique et mécanique, éloignée de l'imitation réaliste d'un oiseau, afin de créer une présence étrange mais assumée. Le mouvement devient alors le principal vecteur de vie, plus que l'apparence.\n\nDans une seconde phase, l'animatronic est pensé pour évoluer vers un objet robotique interactif, intégrant des comportements programmés et des réponses inspirées de l'intelligence artificielle, renforçant encore cette impression de présence semi-vivante.",
       process:
-        "Conception mécanique des articulations, programmation des mouvements fluides, intégration des servomoteurs, développement du système de contrôle.",
-      results: "...",
-    },
-    {
-      id: 5,
-      title: "Le Goût du Nous",
-      category: "Identité Visuelle",
-      hasImage: true,
-      image: cuistotImage,
-      year: "2023 - 2024",
-      discipline: "...",
-      sector: "Culinaire / Événementiel",
-      description: "!!!!! En cours de développement",
-      longDescription: "...",
-      features: ["...", "...", "...", "..."],
-      technologies: ["...", "...", "...", "..."],
-      concept: "...",
-      process: "...",
-      results: "...",
+        "Le travail débute par une phase de sculpture en argile, permettant d'explorer les volumes et les proportions du perroquet. (j'en suis ici actuellement ☺ ) Cette sculpture est destinée à être scannée en 3D, puis imprimée, afin de constituer une structure modulaire servant de base à la mécanique interne.\n\nLa conception mécanique vise à reproduire des mouvements crédibles et expressifs, tout en conservant une lecture visible de la structure, pour éviter un réalisme trop lisse. La dernière phase portera sur l'intégration de l'électronique et de la programmation (Arduino), afin de piloter les mouvements, les comportements et les futures interactions.",
+      results:
+        "Le projet est actuellement en cours de fabrication, à un stade de recherche formelle et mécanique. Les premières formes sculptées servent de base à une réflexion globale sur la présence, le mouvement et la perception du vivant artificiel.\n\nLe résultat visé est un perroquet animatronique à la présence troublante mais maîtrisée, suscitant curiosité, amusement et léger malaise, sans chercher à tromper totalement le spectateur.",
     },
     {
       id: 6,
@@ -239,16 +248,31 @@ const ProjectDetail = () => {
       category: "Application mobile",
       hasImage: true,
       image: photoboothImage,
-      year: "20??",
-      discipline: "...",
-      sector: "...",
-      description: "!!!⚙️!!! En cours de développement.",
-      longDescription: "...",
-      features: ["...", "...", "...", "..."],
-      technologies: ["...", "...", "...", "..."],
-      concept: "...",
-      process: "...",
-      results: "...",
+      additionalImages: [
+        photokabOuiImage,
+        photokabTimelaps,
+        photokabApercuuMp4,
+        photokabKabin1Image,
+      ],
+      year: "2026",
+      discipline: "Application mobile",
+      sector: "Mobile / Design",
+      description: "Une app iOS qui recrée l'expérience des cabines photos.",
+      longDescription:
+        "PhotoKabine, c'est un photobooth dans ma poche. L'app me plonge directement dans une vraie cabine photo avec un rideau animé sur lequel je peux cliquer pour « entrer » dedans. Une fois à l'intérieur, je choisis mon format : 1, 2, 4 ou 6 photos, exactement comme dans les photobooths classiques.\n\nAprès avoir pris mes photos, elles s'assemblent automatiquement dans une mise en page style photobooth/Polaroid, avec un joli filtre sépia pour cet aspect rétro qui fait tout son charme. Mes créations sont ensuite sauvegardées dans un album intégré à l'app (avec la date et l'heure), et je peux les télécharger sur mon téléphone tout en gardant le style photobooth.\n\nLe but ? Recréer cette ambiance nostalgique des cabines photos, mais sur mon iPhone, avec un design soigné et une expérience immersive.",
+      features: [
+        "Assemblage auto style photobooth",
+        "Album intégré avec date et heure",
+        "Téléchargement dans l'album du téléphone",
+      ],
+      technologies: ["Flutter", "Dart", "iOS", "Procreate"],
+      concept:
+        "Défi personnel : découvrir Flutter et Dart de zéro en deux jours et créer une app mobile orientée illustration. Je n'avais jamais touché à Flutter avant, donc j'ai dû tout apprendre sur le tas. J'ai aussi créé tous les visuels pour garder une cohérence entre le design et le code.\n\nAu-delà du défi technique, je voulais surtout créer quelque chose de fun et immersif.",
+      process:
+        "Deux jours intensifs à explorer Flutter sans aucune base. J'ai commencé par comprendre comment fonctionnent les widgets, puis j'ai enchaîné sur la gestion d'état, la navigation, l'accès à la caméra... Tout ça en parallèle de la création des visuels. Évidemment, je me suis aidée de l'IA pour avoir une base de projet, puis je l'ai utilisé comme une documentation. L'outil cursor m'a permis de débuger plus vite et de peaufiner le projet. (Sinon en 2 jours, sans connaissance du framework, c'est impossible!)",
+      results:
+        "Une app fonctionnelle, avec les fonctionnalités prévues. Ce n'est pas parfait (il y a quelques optimisations à faire niveau performance et quelques détails graphiques à améliorer), mais le défi est relevé !\n\nPour la suite, j'aimerais ajouter des bruitages pour renforcer l'immersion, corriger les petits bugs visuels et améliorer les performances. Mais j'ai volontairement figé le projet à la fin des deux jours pour respecter le cadre du défi.",
+      github: "https://github.com/Ramswed/photoKabine",
     },
     {
       id: 8,
@@ -285,7 +309,7 @@ const ProjectDetail = () => {
       concept:
         "Créer un site web vitrine qui capture l'esprit authentique du Muse Bar : un bar simple et sympa avec une touche soignée. Le design moderne met en valeur les couleurs et éléments du logo, reflétant l'identité du bar où « le concept c'est : pas de concept ». Une expérience digitale qui guide les visiteurs pour découvrir l'histoire, la carte, la localisation et toutes les informations pratiques du bar.",
       process:
-        "Premier projet web : rencontre avec le client pour définir les besoins, création de maquettes à la main, puis développement en HTML5/CSS3/JavaScript vanilla avec architecture modulaire. Projet réalisé en une semaine, parallèlement aux cours.",
+        "Premier VRAI projet web : rencontre avec le client pour définir les besoins, création de maquettes à la main, puis développement en HTML5/CSS3/JavaScript vanilla avec architecture modulaire. Projet réalisé en une semaine, parallèlement aux cours.",
       results:
         "Site web complet et fonctionnel (v1.0) accessible sur musebar.fr. Le projet a été livré avec succès et rencontre une excellente réception de la part du client. Le site répond parfaitement aux objectifs initiaux en reflétant l'identité authentique du bar tout en offrant une expérience utilisateur simple et efficace. Tous les objectifs ont été atteints avec une solution qui capture l'essence du Muse Bar et répond à l'ensemble des besoins identifiés lors de la phase de conception.",
     },
@@ -308,7 +332,6 @@ const ProjectDetail = () => {
         "Représentation d'un souvenir commun de formation",
         "Éléments symboliques de la SNSM",
         "Identité visuelle de la promotion",
-        "Plusieurs versions proposées",
       ],
       technologies: ["Adobe Illustrator", "Design vectoriel", "Illustration"],
       concept:
@@ -317,40 +340,6 @@ const ProjectDetail = () => {
         "Échange avec l'équipe pour comprendre leur souvenir commun et identifier les éléments obligatoires à intégrer. Collaboration sur les couleurs et les emplacements des éléments pour créer plusieurs versions. L'équipe a finalement choisi la version 2, qui capturait le mieux l'essence de leur expérience partagée.",
       results:
         "Badge commémoratif finalisé et validé par l'équipe, qui matérialise leur expérience de formation. Un objet symbolique qui représente leur cohésion et leur parcours commun, créé bénévolement pour célébrer leur engagement dans le sauvetage en mer.",
-    },
-    {
-      id: 11,
-      title: "NeuroScope",
-      category: "Site Web",
-      hasImage: true,
-      image: vestiaImage,
-      year: "2026",
-      discipline: "Science",
-      sector: "Science",
-      description: "...",
-      longDescription: "...",
-      features: ["...", "...", "...", "..."],
-      technologies: ["...", "...", "...", "..."],
-      concept: "...",
-      process: "...",
-      results: "...",
-    },
-    {
-      id: 12,
-      title: "the child & the book",
-      category: "Identité Visuelle",
-      hasImage: true,
-      image: childandbookImage,
-      year: "20??",
-      discipline: "Graphisme",
-      sector: "...",
-      description: "...",
-      longDescription: "...",
-      features: ["...", "...", "...", "..."],
-      technologies: ["...", "...", "...", "..."],
-      concept: "...",
-      process: "...",
-      results: "...",
     },
     {
       id: 13,
@@ -364,16 +353,26 @@ const ProjectDetail = () => {
         horschampsvid2,
         horschampsvid,
       ],
-      year: "20??",
+      year: "2024",
       discipline: "Sérigraphie",
-      sector: "...",
-      description: "...",
-      longDescription: "...",
-      features: ["...", "...", "...", "..."],
-      technologies: ["...", "...", "...", "..."],
-      concept: "...",
-      process: "...",
-      results: "...",
+      sector: "Illustration · Jeunesse",
+      description: "Sérigraphie illustrée.",
+      longDescription:
+        "Hors Champ est un projet d'illustration expérimentale autour d'un renard évoluant dans un univers forestier naïf. Pensé à l'origine comme une simple illustration d'entraînement pour l'illustration jeunesse, le projet a évolué vers une exploration de la sérigraphie et du support imprimé. L'image devient un objet à manipuler, jouant avec le hors-champ, le pliage et la narration visuelle.\n\nLe résultat est une sérigraphie imprimée en noir, présentée sous la forme d'une page pliable et dépliable. L'objet final propose une courte narration visuelle autour des choix d'aventure du renard, révélée par la manipulation du support.",
+      features: [
+        "Illustration narrative",
+        "Sérigraphie artisanale",
+        "Support pliable et manipulable",
+        "Dépliage interactif",
+        "Déclinaisons colorées exploratoires",
+      ],
+      technologies: ["Machine de sérigraphie", "Procreate", "Adobe Photoshop"],
+      concept:
+        "Hors Champ est un projet d'illustration expérimentale autour d'un renard évoluant dans un univers forestier naïf. Pensé à l'origine comme une simple illustration d'entraînement pour l'illustration jeunesse, le projet a évolué vers une exploration de la sérigraphie et du support imprimé. L'image devient un objet à manipuler, jouant avec le hors-champ, le pliage et la narration visuelle.",
+      process:
+        "Le projet débute par une illustration réalisée pour le plaisir et l'expérimentation graphique. L'envie de découvrir la sérigraphie a ensuite orienté le travail vers l'adaptation de l'image à ce procédé d'impression. Plusieurs variantes colorées ont été produites en amont pour anticiper un rendu en sérigraphie multi-couleurs. L'illustration a également été pensée pour être découpée et pliée, afin de créer un système de dépliage narratif.",
+      results:
+        "Une sérigraphie en noir sur une page pliable. En dépliant le support, on découvre une histoire autour d'une promenade d'un renard. (C'était surtout un prétexte pour sérigraphier !!)",
     },
   ];
 
@@ -500,6 +499,8 @@ const ProjectDetail = () => {
                 media === horschampsvid ||
                 media === horschampsvid2 ||
                 media === horschampsvid3 ||
+                media === photokabTimelaps ||
+                media === photokabApercuuMp4 ||
                 (typeof media === "string" &&
                   (media.includes(".mp4") ||
                     media.includes(".mov") ||
@@ -513,6 +514,10 @@ const ProjectDetail = () => {
                 posterImage = visuHC1;
               } else if (media === horschampsvid2) {
                 posterImage = visuHC2;
+              } else if (media === photokabTimelaps) {
+                posterImage = photokabKabin2Image;
+              } else if (media === photokabApercuuMp4) {
+                posterImage = photokabKabin3Image;
               }
 
               const isGif = typeof media === "string" && media.includes(".gif");

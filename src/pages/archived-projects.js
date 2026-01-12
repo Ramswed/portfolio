@@ -1,0 +1,60 @@
+// ARCHIVED PROJECTS - Pour utilisation future
+// Ce fichier contient les projets archivés qui peuvent être réintégrés plus tard
+
+import cuistotImage from "../assets/images/cuistot/cuistot.png";
+import vestiaImage from "../assets/images/vestia.png";
+import childandbookImage from "../assets/images/childandbook.png";
+
+export const archivedProjects = [
+  {
+    id: 5,
+    title: "Le Goût du Nous",
+    category: "Identité Visuelle",
+    hasImage: true,
+    image: cuistotImage,
+    year: "2023 - 2024",
+    discipline: "...",
+    sector: "Culinaire / Événementiel",
+    description: "!!!!! En cours de développement",
+    longDescription: "...",
+    features: ["...", "...", "...", "..."],
+    technologies: ["...", "...", "...", "..."],
+    concept: "...",
+    process: "...",
+    results: "...",
+  },
+  {
+    id: 11,
+    title: "NeuroScope",
+    category: "Site Web",
+    hasImage: true,
+    image: vestiaImage,
+    year: "2026",
+    discipline: "Science",
+    sector: "Science",
+    description: "...",
+    longDescription: "...",
+    features: ["...", "...", "...", "..."],
+    technologies: ["...", "...", "...", "..."],
+    concept: "...",
+    process: "...",
+    results: "...",
+  },
+  {
+    id: 12,
+    title: "the child & the book",
+    category: "Identité Visuelle",
+    hasImage: true,
+    image: childandbookImage,
+    year: "20??",
+    discipline: "Graphisme",
+    sector: "...",
+    description: "...",
+    longDescription: "...",
+    features: ["...", "...", "...", "..."],
+    technologies: ["...", "...", "...", "..."],
+    concept: "...",
+    process: "...",
+    results: "...",
+  },
+];

@@ -3,9 +3,10 @@ import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { Link } from "react-router-dom";
 import asciiartImage from "../assets/images/asciiart/asciiart.png";
 import musebarImage from "../assets/images/musebar.png";
-import pocketmeImage from "../assets/images/pocket.png";
-import photoboothImage from "../assets/images/photobooth.png";
+import pocketmeImage from "../assets/images/pocket/pocket.png";
+import photoboothImage from "../assets/images/photokab/photobooth.png";
 import patronImage from "../assets/images/patrondumuse.png";
+import vagImage from "../assets/images/vag.png";
 
 const MotionLink = motion(Link);
 
@@ -166,25 +167,24 @@ const Home = () => {
         transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
         viewport={{ once: true, margin: "-50px" }}
       >
-        <div className="testimonials-gallery">
-          <div className="testimonial-content">
-            <p className="testimonial-quote">
-              "Dès le départ, Manon a capté l’esprit du Muse Bar et a su
-              traduire nos idées en un site clair et agréable à naviguer. On
-              retrouve dans chaque détail notre identité, sans que ça paraisse
-              forcé ou trop travaillé. C’est un site simple & pratique à
-              utiliser."
-            </p>
-            <p className="testimonial-author">
-              Hugo,{" "}
-              <Link to="/project/8" className="testimonial-link">
-                <em>Muse bar.</em>
-              </Link>
-            </p>
-          </div>
-          <div className="testimonial-image">
-            <img src={patronImage} alt="Hugo, patron du Muse Bar" />
-          </div>
+        <img src={vagImage} alt="" className="testimonials-banner" />
+        <div className="testimonial-content">
+          <p className="testimonial-quote">
+            "Dès le départ, Manon a capté l'esprit du Muse Bar et a su
+            traduire nos idées en un site clair et agréable à naviguer. On
+            retrouve dans chaque détail notre identité, sans que ça paraisse
+            forcé ou trop travaillé. C'est un site simple & pratique à
+            utiliser."
+          </p>
+          <p className="testimonial-author">
+            Hugo,{" "}
+            <Link to="/project/8" className="testimonial-link">
+              <em>Muse bar.</em>
+            </Link>
+          </p>
+        </div>
+        <div className="testimonial-image">
+          <img src={patronImage} alt="Hugo, patron du Muse Bar" />
         </div>
       </motion.div>
 
