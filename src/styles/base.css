@@ -7,6 +7,13 @@
   font-style: normal;
 }
 
+/* Breakpoints variables */
+:root {
+  --breakpoint-mobile: 480px;
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 1200px;
+}
+
 * {
   margin: 0;
   padding: 0;

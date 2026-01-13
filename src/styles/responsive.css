@@ -1,4 +1,14 @@
+/* ============================================
+   RESPONSIVE STYLES
+   Organized by breakpoint for better maintainability
+   ============================================ */
+
+/* ============================================
+   TABLET & MOBILE (max-width: 768px)
+   ============================================ */
+
 @media (max-width: 768px) {
+  /* ===== NAVIGATION ===== */
   .nav {
     padding: 20px 0;
   }
@@ -71,9 +81,8 @@
     font-size: 18px;
     padding: 12px 24px;
   }
-}
 
-@media (max-width: 768px) {
+  /* ===== HOME PAGE ===== */
   .main {
     padding: 140px 15px 60px;
   }
@@ -152,14 +161,15 @@
   }
 
   .testimonial-quote {
-    font-size: 12px;
-    line-height: 1.4;
-    margin-bottom: 12px;
+    font-size: 11px;
+    line-height: 1.3;
+    margin-bottom: 10px;
     padding: 0;
     position: relative;
     font-style: italic;
     font-weight: bold;
     color: #fff;
+    text-align: left;
   }
 
   .testimonial-quote::before {
@@ -167,10 +177,11 @@
   }
 
   .testimonial-author {
-    font-size: 10px;
+    font-size: 9px;
     margin-top: 0;
     font-weight: 900;
     color: #fff;
+    text-align: left;
   }
 
   .testimonial-link {
@@ -217,70 +228,8 @@
     padding: 14px 28px;
     font-size: 16px;
   }
-}
 
-@media (max-width: 480px) {
-  .main {
-    padding: 120px 10px 40px;
-  }
-
-  .home-title,
-  .main-title {
-    font-size: 32px;
-    margin-bottom: 40px;
-  }
-
-  .featured-projects .project-image {
-    height: 200px;
-  }
-
-  .featured-projects .project-title {
-    font-size: 20px;
-  }
-
-  .values-text {
-    font-size: 18px;
-  }
-
-  .asterisk {
-    font-size: 50px;
-  }
-
-  .testimonials-section {
-    padding: 0;
-  }
-
-  .testimonial-content {
-    padding: 15px;
-    max-width: 250px;
-  }
-
-  .testimonial-image img {
-    width: 150px;
-  }
-
-  .testimonial-quote {
-    font-size: 11px;
-    line-height: 1.4;
-    margin-bottom: 10px;
-    padding: 0;
-  }
-
-  .testimonial-quote::before {
-    display: none;
-  }
-
-  .testimonial-author {
-    margin-top: 0;
-    font-size: 9px;
-  }
-
-  .cta-text {
-    font-size: 18px;
-  }
-}
-
-@media (max-width: 768px) {
+  /* ===== PROJECTS PAGE ===== */
   .project-row {
     grid-template-columns: 1fr;
     gap: 30px;
@@ -317,156 +266,112 @@
   .project-image {
     height: 250px;
   }
-}
 
-@media (max-width: 480px) {
-  .project-title {
-    font-size: 18px;
-  }
-
-  .project-image {
-    height: 200px;
-  }
-
-  .category-title {
-    font-size: 18px;
-    margin-top: 80px;
-    margin-bottom: 30px;
-  }
-}
-
-@media (max-width: 1199px) {
-  .project-title {
-    font-size: 3rem;
-  }
-
-  .project-hero-image {
-    height: 400px;
-  }
-
-  .project-process-images {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .features-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .project-navigation {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-@media (max-width: 767px) {
-  .project-container {
+  /* ===== PROJECT DETAIL PAGE ===== */
+  .project-detail .project-container {
     padding: 0 15px;
   }
 
-  .project-header {
+  .project-detail .project-header {
     padding: 40px 0 30px;
   }
 
-  .project-title {
+  .project-detail .project-hero .project-title {
     font-size: 2rem;
     line-height: 1.2;
   }
 
-  .project-subtitle {
+  .project-detail .project-subtitle {
     font-size: 1rem;
   }
 
-  .meta-grid {
+  .project-detail .meta-grid {
     grid-template-columns: 1fr;
     gap: 20px;
   }
 
-  .project-hero-image {
+  .project-detail .project-hero-image {
     height: 250px;
     margin: 30px 0;
   }
 
-  .project-section {
+  .project-detail .project-section {
     padding: 40px 0;
   }
 
-  .section-title {
+  .project-detail .section-title {
     font-size: 1.5rem;
     margin-bottom: 20px;
   }
 
-  .section-text {
+  .project-detail .section-text {
     font-size: 16px;
     line-height: 1.6;
   }
 
-  .project-process-images {
+  .project-detail .project-process-images {
     grid-template-columns: 1fr;
     gap: 15px;
     margin: 30px 0;
   }
 
-  .process-image {
+  .project-detail .process-image {
     height: 200px;
   }
 
-  .features-grid {
+  .project-detail .features-grid {
     grid-template-columns: 1fr;
     gap: 15px;
   }
 
-  .feature-item {
+  .project-detail .feature-item {
     padding: 15px;
   }
 
-  .tech-tags {
+  .project-detail .tech-tags {
     gap: 8px;
   }
 
-  .tech-tag {
+  .project-detail .tech-tag {
     padding: 6px 12px;
     font-size: 13px;
   }
 
-  .project-navigation {
+  .project-detail .project-navigation {
     flex-direction: column;
     gap: 15px;
   }
 
-  .nav-button {
+  .project-detail .nav-button {
     padding: 12px 24px;
     font-size: 14px;
     min-width: auto;
     width: 100%;
     max-width: 300px;
   }
-}
 
-@media (max-width: 480px) {
-  .project-title {
-    font-size: 1.75rem;
+  .lightbox-content {
+    max-width: 95vw;
+    max-height: 95vh;
   }
 
-  .project-hero-image {
-    height: 200px;
+  .lightbox-close {
+    top: 20px;
+    right: 20px;
+    font-size: 40px;
+    width: 40px;
+    height: 40px;
   }
 
-  .section-title {
-    font-size: 1.25rem;
+  .lightbox-image {
+    max-height: 85vh;
   }
 
-  .section-text {
-    font-size: 15px;
+  .lightbox-video {
+    max-height: 85vh;
   }
 
-  .process-image {
-    height: 180px;
-  }
-}
-
-@media (max-width: 768px) {
+  /* ===== CONTACT PAGE ===== */
   .contact-form-section {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -516,33 +421,8 @@
   .faq-answer {
     font-size: 15px;
   }
-}
 
-@media (max-width: 480px) {
-  .contact-title {
-    font-size: 28px;
-  }
-
-  .contact-subtitle {
-    font-size: 15px;
-  }
-
-  .form-input,
-  .form-textarea {
-    font-size: 16px;
-    padding: 16px 0;
-  }
-
-  .faq-title {
-    font-size: 24px;
-  }
-
-  .faq-question {
-    font-size: 16px;
-  }
-}
-
-@media (max-width: 768px) {
+  /* ===== FOOTER ===== */
   .footer {
     padding: 30px 0;
   }
@@ -565,7 +445,135 @@
   }
 }
 
+/* ============================================
+   SMALL MOBILE (max-width: 480px)
+   ============================================ */
+
 @media (max-width: 480px) {
+  /* ===== HOME PAGE ===== */
+  .main {
+    padding: 120px 10px 40px;
+  }
+
+  .home-title,
+  .main-title {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+
+  .featured-projects .project-image {
+    height: 200px;
+  }
+
+  .featured-projects .project-title {
+    font-size: 20px;
+  }
+
+  .values-text {
+    font-size: 18px;
+  }
+
+  .asterisk {
+    font-size: 50px;
+  }
+
+  .testimonials-section {
+    padding: 0;
+  }
+
+  .testimonial-content {
+    padding: 15px;
+    max-width: 250px;
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .testimonial-image img {
+    width: 150px;
+  }
+
+  .testimonial-quote {
+    font-size: 10px;
+    line-height: 1.3;
+    margin-bottom: 8px;
+    padding: 0;
+    text-align: left;
+  }
+
+  .testimonial-quote::before {
+    display: none;
+  }
+
+  .testimonial-author {
+    margin-top: 0;
+    font-size: 8px;
+    text-align: left;
+  }
+
+  .cta-text {
+    font-size: 18px;
+  }
+
+  /* ===== PROJECTS PAGE ===== */
+  .project-title {
+    font-size: 18px;
+  }
+
+  .project-image {
+    height: 200px;
+  }
+
+  .category-title {
+    font-size: 18px;
+    margin-top: 80px;
+    margin-bottom: 30px;
+  }
+
+  /* ===== PROJECT DETAIL PAGE ===== */
+  .project-detail .project-hero .project-title {
+    font-size: 1.75rem;
+  }
+
+  .project-detail .project-hero-image {
+    height: 200px;
+  }
+
+  .project-detail .section-title {
+    font-size: 1.25rem;
+  }
+
+  .project-detail .section-text {
+    font-size: 15px;
+  }
+
+  .project-detail .process-image {
+    height: 180px;
+  }
+
+  /* ===== CONTACT PAGE ===== */
+  .contact-title {
+    font-size: 28px;
+  }
+
+  .contact-subtitle {
+    font-size: 15px;
+  }
+
+  .form-input,
+  .form-textarea {
+    font-size: 16px;
+    padding: 16px 0;
+  }
+
+  .faq-title {
+    font-size: 24px;
+  }
+
+  .faq-question {
+    font-size: 16px;
+  }
+
+  /* ===== FOOTER ===== */
   .footer-links {
     gap: 15px;
     font-size: 14px;
@@ -574,5 +582,34 @@
   .social-link {
     width: 40px;
     height: 40px;
+  }
+}
+
+/* ============================================
+   MEDIUM DESKTOP (max-width: 1199px)
+   ============================================ */
+
+@media (max-width: 1199px) {
+  .project-detail .project-hero .project-title {
+    font-size: 3rem;
+  }
+
+  .project-detail .project-hero-image {
+    height: 400px;
+  }
+
+  .project-detail .project-process-images {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .project-detail .features-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .project-detail .project-navigation {
+    flex-direction: column;
+    align-items: center;
   }
 }
