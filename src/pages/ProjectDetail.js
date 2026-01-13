@@ -470,7 +470,7 @@ const ProjectDetail = () => {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
-          <img src={project.image} alt={project.title} className="hero-image" />
+          <img src={project.image} alt={project.title} className="hero-image" loading="eager" />
         </motion.div>
 
         <motion.section
@@ -566,6 +566,7 @@ const ProjectDetail = () => {
                     <img
                       src={media}
                       alt={`${project.title} - ${index + 1}`}
+                      loading="lazy"
                       onClick={() =>
                         setLightboxMedia({
                           src: media,
@@ -801,6 +802,7 @@ const ProjectDetail = () => {
                 src={lightboxMedia.src}
                 alt={`${project.title} - Vue agrandie`}
                 className="lightbox-image"
+                loading="eager"
                 onContextMenu={(e) => e.preventDefault()}
                 onDragStart={(e) => e.preventDefault()}
                 draggable="false"

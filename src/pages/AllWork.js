@@ -143,7 +143,7 @@ const AllWork = () => {
           <Link to={`/project/${project.id}`} className="project-link">
             {project.hasImage && (
               <div className="project-image">
-                <img src={project.image} alt={project.title} />
+                <img src={project.image} alt={project.title} loading="lazy" />
               </div>
             )}
             <h2 className="project-title">{project.title}</h2>

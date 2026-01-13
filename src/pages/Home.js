@@ -128,6 +128,7 @@ const Home = () => {
                     <motion.img
                       src={project.image}
                       alt={project.title}
+                      loading="lazy"
                       style={{ scale }}
                     />
                   </div>
@@ -167,7 +168,7 @@ const Home = () => {
         transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
         viewport={{ once: true, margin: "-50px" }}
       >
-        <img src={vagImage} alt="" className="testimonials-banner" />
+        <img src={vagImage} alt="" className="testimonials-banner" loading="lazy" />
         <div className="testimonial-content">
           <p className="testimonial-quote">
             "Dès le départ, Manon a capté l'esprit du Muse Bar et a su
@@ -184,7 +185,7 @@ const Home = () => {
           </p>
         </div>
         <div className="testimonial-image">
-          <img src={patronImage} alt="Hugo, patron du Muse Bar" />
+          <img src={patronImage} alt="Hugo, patron du Muse Bar" loading="lazy" />
         </div>
       </motion.div>
 

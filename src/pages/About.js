@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import cvPdf from "../assets/images/CV.pdf";
+import cmoiImage from "../assets/images/pp/cmoi.png";
 
 const About = () => {
   const containerVariants = {
@@ -40,7 +41,9 @@ const About = () => {
             whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
           >
             <div className="member-image-wrapper">
-              <div className="member-image"></div>
+              <div className="member-image">
+                <img src={cmoiImage} alt="Manon Leroux" />
+              </div>
             </div>
             <h2 className="member-name">Manon Leroux</h2>
             <p className="member-role">Développeuse Full-Stack / Graphiste</p>
@@ -169,6 +172,7 @@ const About = () => {
                 <span className="skill-tag">HTML</span>
                 <span className="skill-tag">CSS</span>
                 <span className="skill-tag">JavaScript</span>
+                <span className="skill-tag">Dart</span>
               </div>
             </motion.div>
             <motion.div
@@ -179,6 +183,7 @@ const About = () => {
               <div className="skill-items">
                 <span className="skill-tag">React</span>
                 <span className="skill-tag">Node.js</span>
+                <span className="skill-tag">Flutter</span>
               </div>
             </motion.div>
             <motion.div
@@ -434,12 +439,12 @@ const About = () => {
               <span className="social-link-url">manon-leroux</span>
             </motion.a>
             <motion.a
-              href="mailto:ramswed.pro@gmail.com"
+              href="mailto:manonlrx48@gmail.com"
               className="social-link-item"
               whileHover={{ y: -4, transition: { duration: 0.3 } }}
             >
               <span className="social-link-label">Email</span>
-              <span className="social-link-url">ramswed.pro@gmail.com</span>
+              <span className="social-link-url">manonlrx48@gmail.com</span>
             </motion.a>
           </div>
           <div className="section-divider"></div>
