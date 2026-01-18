@@ -195,6 +195,7 @@ const About = () => {
                 <span className="skill-tag">Figma</span>
                 <span className="skill-tag">Adobe Creative Suite</span>
                 <span className="skill-tag">Canva</span>
+                <span className="skill-tag">Affinity</span>
               </div>
             </motion.div>
           </div>
