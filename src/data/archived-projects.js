@@ -1,6 +1,3 @@
-// ARCHIVED PROJECTS - Pour utilisation future
-// Ce fichier contient les projets archivés qui peuvent être réintégrés plus tard
-
 import cuistotImage from "../assets/images/cuistot/cuistot.png";
 import vestiaImage from "../assets/images/vestia.png";
 import childandbookImage from "../assets/images/childandbook.png";

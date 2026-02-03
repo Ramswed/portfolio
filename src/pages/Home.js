@@ -1,10 +1,7 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { Link } from "react-router-dom";
-import asciiartImage from "../assets/images/asciiart/asciiart.png";
-import musebarImage from "../assets/images/musebar.png";
-import pocketmeImage from "../assets/images/pocket/pocket.png";
-import photoboothImage from "../assets/images/photokab/photobooth.png";
+import { getProjectsByIds } from "../data/projects";
 import patronImage from "../assets/images/patrondumuse.png";
 import vagImage from "../assets/images/vag.png";
 
@@ -30,36 +27,7 @@ const Home = () => {
 
   const scale = useTransform(easedProgress, [0, 1], [1.3, 1]);
 
-  const featuredProjects = [
-    {
-      id: 8,
-      title: "Muse Bar",
-      category: "Site Vitrine, ui/ux",
-      hasImage: true,
-      image: musebarImage,
-    },
-    {
-      id: 3,
-      title: "Pocket-me",
-      category: "Application mobile",
-      hasImage: true,
-      image: pocketmeImage,
-    },
-    {
-      id: 7,
-      title: "PhotoKabine",
-      category: "Application mobile",
-      hasImage: true,
-      image: photoboothImage,
-    },
-    {
-      id: 1,
-      title: "Ascii Convertisseur",
-      category: "Site Web, illustration",
-      hasImage: true,
-      image: asciiartImage,
-    },
-  ];
+  const featuredProjects = getProjectsByIds([8, 3, 7, 1]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -168,14 +136,18 @@ const Home = () => {
         transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
         viewport={{ once: true, margin: "-50px" }}
       >
-        <img src={vagImage} alt="" className="testimonials-banner" loading="lazy" />
+        <img
+          src={vagImage}
+          alt=""
+          className="testimonials-banner"
+          loading="lazy"
+        />
         <div className="testimonial-content">
           <p className="testimonial-quote">
-            "Dès le départ, Manon a capté l'esprit du Muse Bar et a su
-            traduire nos idées en un site clair et agréable à naviguer. On
-            retrouve dans chaque détail notre identité, sans que ça paraisse
-            forcé ou trop travaillé. C'est un site simple & pratique à
-            utiliser."
+            "Dès le départ, Manon a capté l'esprit du Muse Bar et a su traduire
+            nos idées en un site clair et agréable à naviguer. On retrouve dans
+            chaque détail notre identité, sans que ça paraisse forcé ou trop
+            travaillé. C'est un site simple & pratique à utiliser."
           </p>
           <p className="testimonial-author">
             Hugo,{" "}
@@ -185,7 +157,11 @@ const Home = () => {
           </p>
         </div>
         <div className="testimonial-image">
-          <img src={patronImage} alt="Hugo, patron du Muse Bar" loading="lazy" />
+          <img
+            src={patronImage}
+            alt="Hugo, patron du Muse Bar"
+            loading="lazy"
+          />
         </div>
       </motion.div>
 

@@ -1,83 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import asciiartImage from "../assets/images/asciiart/asciiart.png";
-import groupieImage from "../assets/images/groupietracker/groupie .png";
-import pocketmeImage from "../assets/images/pocket/pocket.png";
-import flintImage from "../assets/images/flint/flint.png";
-import forumImage from "../assets/images/forum/forum.png";
-import photoboothImage from "../assets/images/photokab/photobooth.png";
-import musebarImage from "../assets/images/musebar.png";
-import snsmImage from "../assets/images/snsm/snsm.png";
-import horschampImage from "../assets/images/horschamps/horschamp.png";
+import { getProjectsByIds } from "../data/projects";
 
 const AllWork = () => {
-  const projects = [
-    {
-      id: 1,
-      title: "Ascii Convertisseur",
-      category: "Site Web",
-      hasImage: true,
-      image: asciiartImage,
-    },
-    {
-      id: 2,
-      title: "Groupie Tracker",
-      category: "Site Web",
-      hasImage: true,
-      image: groupieImage,
-    },
-    {
-      id: 3,
-      title: "Pocket-me",
-      category: "Application mobile",
-      hasImage: true,
-      image: pocketmeImage,
-    },
-    {
-      id: 4,
-      title: "Capitaine Flint",
-      category: "Robotique",
-      hasImage: true,
-      image: flintImage,
-    },
-    {
-      id: 6,
-      title: "Forum",
-      category: "Site Web, Forum",
-      hasImage: true,
-      image: forumImage,
-    },
-    {
-      id: 7,
-      title: "PhotoKabine",
-      category: "Application mobile",
-      hasImage: true,
-      image: photoboothImage,
-    },
-    {
-      id: 8,
-      title: "Muse Bar",
-      category: "Site Web",
-      hasImage: true,
-      image: musebarImage,
-    },
-    {
-      id: 10,
-      title: "Badge SNSM Rouen",
-      category: "Illustration",
-      hasImage: true,
-      image: snsmImage,
-    },
-    {
-      id: 13,
-      title: "Hors-champ",
-      category: "Sérigraphie",
-      hasImage: true,
-      image: horschampImage,
-    },
-  ];
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -112,20 +38,12 @@ const AllWork = () => {
     },
   };
 
-  const category1Order = [3, 7, 8, 4]; // Ordre spécifique
-  const category1Projects = category1Order
-    .map((id) => projects.find((p) => p.id === id))
-    .filter(Boolean);
+  const category1Row1 = getProjectsByIds([3, 7]);
+  const category1Row2 = getProjectsByIds([8, 4]);
 
-  const category1Row1 = category1Projects.slice(0, 2); // Pocket-me, PhotoKabine (2 projets)
-  const category1Row2 = category1Projects.slice(2); // Muse Bar, Capitaine Flint (2 projets)
+  const category2Projects = getProjectsByIds([13, 10]);
 
-  const category2Order = [13, 10]; // Ordre spécifique
-  const category2Projects = category2Order
-    .map((id) => projects.find((p) => p.id === id))
-    .filter(Boolean); // Hors-champ, Badge SNSM Rouen
-
-  const category3Projects = projects.filter((p) => [1, 2, 6].includes(p.id)); // Ascii Convertisseur, Groupie Tracker, Forum
+  const category3Projects = getProjectsByIds([1, 2, 6]);
 
   const renderProjectsGrid = (projectsList, className = "projects-grid") => (
     <motion.div
@@ -190,7 +108,7 @@ const AllWork = () => {
       </motion.h2>
       {renderProjectsGrid(
         category3Projects,
-        "projects-grid projects-grid-ascii"
+        "projects-grid projects-grid-ascii",
       )}
 
       <motion.div
