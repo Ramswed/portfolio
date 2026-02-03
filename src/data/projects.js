@@ -38,6 +38,17 @@ import horschampsvid3 from "../assets/images/horschamps/horschampsvid3.mp4";
 import visuHC1 from "../assets/images/horschamps/visuHC1.png";
 import visuHC2 from "../assets/images/horschamps/visuHC2.png";
 
+// Imports WebP (images principales des projets - fallback PNG ci-dessus)
+import asciiartImageWebp from "../assets/images/asciiart/asciiart.webp";
+import groupieImageWebp from "../assets/images/groupietracker/groupie .webp";
+import pocketmeImageWebp from "../assets/images/pocket/pocket.webp";
+import flintImageWebp from "../assets/images/flint/flint.webp";
+import forumImageWebp from "../assets/images/forum/forum.webp";
+import photoboothImageWebp from "../assets/images/photokab/photobooth.webp";
+import musebarImageWebp from "../assets/images/musebar.webp";
+import snsmImageWebp from "../assets/images/snsm/snsm.webp";
+import horschampImageWebp from "../assets/images/horschamps/horschamp.webp";
+
 export const projects = [
   {
     id: 1,
@@ -45,6 +56,7 @@ export const projects = [
     category: "Site Web, illustration",
     hasImage: true,
     image: asciiartImage,
+    imageWebp: asciiartImageWebp,
     additionalImages: [ascii1Image, ascii2Image],
     year: "2025",
     discipline: "Site Web",
@@ -75,6 +87,7 @@ export const projects = [
     category: "Site Web",
     hasImage: true,
     image: groupieImage,
+    imageWebp: groupieImageWebp,
     additionalImages: [
       groupie1Image,
       groupie2Image,
@@ -111,6 +124,7 @@ export const projects = [
     category: "Application mobile",
     hasImage: true,
     image: pocketmeImage,
+    imageWebp: pocketmeImageWebp,
     additionalImages: [pocketencoursImage],
     year: "2025 – 20??",
     discipline: "Application mobile",
@@ -147,6 +161,7 @@ export const projects = [
     category: "Robotique",
     hasImage: true,
     image: flintImage,
+    imageWebp: flintImageWebp,
     additionalImages: [flintBrouillonImage, uncannyvalleyImage],
     year: "2025 – 20??",
     discipline: "Robotique, Arduino",
@@ -182,6 +197,7 @@ export const projects = [
     category: "Site Web, forum",
     hasImage: true,
     image: forumImage,
+    imageWebp: forumImageWebp,
     year: "2025",
     discipline: "Site Web, forum",
     sector: "Communauté / Nostalgie",
@@ -221,6 +237,7 @@ export const projects = [
     category: "Application mobile",
     hasImage: true,
     image: photoboothImage,
+    imageWebp: photoboothImageWebp,
     additionalImages: [
       photokabOuiImage,
       photokabTimelaps,
@@ -253,6 +270,7 @@ export const projects = [
     category: "Site Web",
     hasImage: true,
     image: musebarImage,
+    imageWebp: musebarImageWebp,
     additionalImages: [
       musebar1Image,
       musebar2Image,
@@ -292,6 +310,7 @@ export const projects = [
     category: "Illustration",
     hasImage: true,
     image: snsmImage,
+    imageWebp: snsmImageWebp,
     additionalImages: [snsm1Image, snsm2Image, snsm3Image],
     year: "2025",
     discipline: "Illustration",
@@ -319,6 +338,7 @@ export const projects = [
     category: "Sérigraphie",
     hasImage: true,
     image: horschampImage,
+    imageWebp: horschampImageWebp,
     additionalImages: [
       horschamps1Image,
       horschampsvid3,

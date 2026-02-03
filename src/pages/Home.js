@@ -2,8 +2,11 @@ import React, { useRef } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { Link } from "react-router-dom";
 import { getProjectsByIds } from "../data/projects";
+import OptimizedImage from "../components/OptimizedImage";
 import patronImage from "../assets/images/patrondumuse.png";
+import patronImageWebp from "../assets/images/patrondumuse.webp";
 import vagImage from "../assets/images/vag.png";
+import vagImageWebp from "../assets/images/vag.webp";
 
 const MotionLink = motion(Link);
 
@@ -93,12 +96,14 @@ const Home = () => {
               <Link to={`/project/${project.id}`} className="project-link">
                 {project.hasImage && (
                   <div className="project-image">
-                    <motion.img
-                      src={project.image}
-                      alt={project.title}
-                      loading="lazy"
-                      style={{ scale }}
-                    />
+                    <motion.div style={{ scale }}>
+                      <OptimizedImage
+                        src={project.image}
+                        webp={project.imageWebp}
+                        alt={project.title}
+                        loading="lazy"
+                      />
+                    </motion.div>
                   </div>
                 )}
                 <h2 className="project-title">{project.title}</h2>
@@ -136,8 +141,9 @@ const Home = () => {
         transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
         viewport={{ once: true, margin: "-50px" }}
       >
-        <img
+        <OptimizedImage
           src={vagImage}
+          webp={vagImageWebp}
           alt=""
           className="testimonials-banner"
           loading="lazy"
@@ -157,8 +163,9 @@ const Home = () => {
           </p>
         </div>
         <div className="testimonial-image">
-          <img
+          <OptimizedImage
             src={patronImage}
+            webp={patronImageWebp}
             alt="Hugo, patron du Muse Bar"
             loading="lazy"
           />

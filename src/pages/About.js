@@ -1,8 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import OptimizedImage from "../components/OptimizedImage";
 import cvPdf from "../assets/images/CV.pdf";
 import cmoiImage from "../assets/images/pp/cmoi.png";
+import cmoiImageWebp from "../assets/images/pp/cmoi.webp";
 
 const About = () => {
   const containerVariants = {
@@ -42,7 +44,11 @@ const About = () => {
           >
             <div className="member-image-wrapper">
               <div className="member-image">
-                <img src={cmoiImage} alt="Manon Leroux" />
+                <OptimizedImage
+                  src={cmoiImage}
+                  webp={cmoiImageWebp}
+                  alt="Manon Leroux"
+                />
               </div>
             </div>
             <h2 className="member-name">Manon Leroux</h2>

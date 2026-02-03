@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useParams, Link } from "react-router-dom";
 import { getProjectById } from "../data/projects";
+import OptimizedImage from "../components/OptimizedImage";
 
 const ProjectDetail = () => {
   const { projectId } = useParams();
@@ -119,8 +120,9 @@ const ProjectDetail = () => {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
-          <img
+          <OptimizedImage
             src={project.image}
+            webp={project.imageWebp}
             alt={project.title}
             className="hero-image"
             loading="eager"
