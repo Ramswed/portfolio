@@ -283,7 +283,6 @@
   background-color: #ff3300;
 }
 
-/* ===== DESKTOP SCREENS - Testimonials positioning ===== */
 @media (min-width: 769px) {
   .testimonial-content {
     transform: translate(-70%, -50%);

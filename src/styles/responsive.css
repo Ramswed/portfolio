@@ -1,14 +1,4 @@
-/* ============================================
-   RESPONSIVE STYLES
-   Organized by breakpoint for better maintainability
-   ============================================ */
-
-/* ============================================
-   TABLET & MOBILE (max-width: 768px)
-   ============================================ */
-
 @media (max-width: 768px) {
-  /* ===== NAVIGATION ===== */
   .nav {
     padding: 20px 0;
   }
@@ -82,7 +72,6 @@
     padding: 12px 24px;
   }
 
-  /* ===== HOME PAGE ===== */
   .main {
     padding: 140px 15px 60px;
   }
@@ -229,7 +218,6 @@
     font-size: 16px;
   }
 
-  /* ===== PROJECTS PAGE ===== */
   .project-row {
     grid-template-columns: 1fr;
     gap: 30px;
@@ -267,7 +255,6 @@
     height: 250px;
   }
 
-  /* ===== PROJECT DETAIL PAGE ===== */
   .project-detail .project-container {
     padding: 0 15px;
   }
@@ -371,7 +358,6 @@
     max-height: 85vh;
   }
 
-  /* ===== CONTACT PAGE ===== */
   .contact-form-section {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -422,7 +408,6 @@
     font-size: 15px;
   }
 
-  /* ===== FOOTER ===== */
   .footer {
     padding: 30px 0;
   }
@@ -445,12 +430,7 @@
   }
 }
 
-/* ============================================
-   SMALL MOBILE (max-width: 480px)
-   ============================================ */
-
 @media (max-width: 480px) {
-  /* ===== HOME PAGE ===== */
   .main {
     padding: 120px 10px 40px;
   }
@@ -514,7 +494,6 @@
     font-size: 18px;
   }
 
-  /* ===== PROJECTS PAGE ===== */
   .project-title {
     font-size: 18px;
   }
@@ -529,7 +508,6 @@
     margin-bottom: 30px;
   }
 
-  /* ===== PROJECT DETAIL PAGE ===== */
   .project-detail .project-hero .project-title {
     font-size: 1.75rem;
   }
@@ -550,7 +528,6 @@
     height: 180px;
   }
 
-  /* ===== CONTACT PAGE ===== */
   .contact-title {
     font-size: 28px;
   }
@@ -573,7 +550,6 @@
     font-size: 16px;
   }
 
-  /* ===== FOOTER ===== */
   .footer-links {
     gap: 15px;
     font-size: 14px;
@@ -584,10 +560,6 @@
     height: 40px;
   }
 }
-
-/* ============================================
-   MEDIUM DESKTOP (max-width: 1199px)
-   ============================================ */
 
 @media (max-width: 1199px) {
   .project-detail .project-hero .project-title {
