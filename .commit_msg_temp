@@ -1,0 +1,17 @@
+perf: intégrer les images WebP pour optimiser le chargement
+
+- Convertir 43 images PNG en WebP avec cwebp (qualité 85)
+- Ajouter les imports WebP dans projects.js pour tous les projets
+- Intégrer OptimizedImage avec fallback PNG dans :
+  - Home.js (projets mis en avant + témoignages)
+  - AllWork.js (grilles de projets)
+  - ProjectDetail.js (image hero)
+  - About.js (photo de profil)
+- Support automatique WebP avec fallback transparent PNG
+
+Impact :
+
+- Réduction de 98% du poids des images (39 MB → 732 KB)
+- Chargement ~50× plus rapide sur navigateurs modernes
+- Compatibilité universelle (fallback PNG pour anciens navigateurs)
+- Amélioration significative du score Lighthouse

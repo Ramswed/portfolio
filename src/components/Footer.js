@@ -1,49 +1,30 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
-  const navigate = useNavigate();
-
-  const handleNavigation = (path) => {
-    navigate(path);
-    window.scrollTo(0, 0);
-  };
-
   return (
     <footer className="footer">
       <div className="footer-nav">
         <ul className="footer-links">
           <li>
-            <button
-              onClick={() => handleNavigation("/")}
-              className="footer-link"
-            >
+            <Link to="/" className="footer-link">
               Accueil
-            </button>
+            </Link>
           </li>
           <li>
-            <button
-              onClick={() => handleNavigation("/all-work")}
-              className="footer-link"
-            >
+            <Link to="/all-work" className="footer-link">
               Mes projets
-            </button>
+            </Link>
           </li>
           <li>
-            <button
-              onClick={() => handleNavigation("/about")}
-              className="footer-link"
-            >
+            <Link to="/about" className="footer-link">
               À propos
-            </button>
+            </Link>
           </li>
           <li>
-            <button
-              onClick={() => handleNavigation("/contact")}
-              className="footer-link"
-            >
+            <Link to="/contact" className="footer-link">
               Contact
-            </button>
+            </Link>
           </li>
         </ul>
       </div>

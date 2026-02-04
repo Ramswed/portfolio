@@ -38,7 +38,6 @@ import horschampsvid3 from "../assets/images/horschamps/horschampsvid3.mp4";
 import visuHC1 from "../assets/images/horschamps/visuHC1.png";
 import visuHC2 from "../assets/images/horschamps/visuHC2.png";
 
-// Imports WebP (images principales des projets - fallback PNG ci-dessus)
 import asciiartImageWebp from "../assets/images/asciiart/asciiart.webp";
 import groupieImageWebp from "../assets/images/groupietracker/groupie .webp";
 import pocketmeImageWebp from "../assets/images/pocket/pocket.webp";
