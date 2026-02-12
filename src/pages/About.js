@@ -2,11 +2,19 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import OptimizedImage from "../components/OptimizedImage";
+import usePageMeta from "../usePageMeta";
 import cvPdf from "../assets/images/CV.pdf";
 import cmoiImage from "../assets/images/pp/cmoi.png";
 import cmoiImageWebp from "../assets/images/pp/cmoi.webp";
 
 const About = () => {
+  usePageMeta({
+    title: "A propos | Manon Leroux",
+    description:
+      "A propos de Manon Leroux : parcours, competences et recherche d'alternance en developpement full-stack.",
+    path: "/about",
+  });
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -446,12 +454,12 @@ const About = () => {
               <span className="social-link-url">manon-leroux</span>
             </motion.a>
             <motion.a
-              href="mailto:manonlrx48@gmail.com"
+              href="mailto:ramswed.pro@gmail.com"
               className="social-link-item"
               whileHover={{ y: -4, transition: { duration: 0.3 } }}
             >
               <span className="social-link-label">Email</span>
-              <span className="social-link-url">manonlrx48@gmail.com</span>
+              <span className="social-link-url">ramswed.pro@gmail.com</span>
             </motion.a>
           </div>
           <div className="section-divider"></div>

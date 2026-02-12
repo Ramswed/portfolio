@@ -10,6 +10,7 @@ const AllWork = lazy(() => import("./pages/AllWork"));
 const About = lazy(() => import("./pages/About"));
 const Contact = lazy(() => import("./pages/Contact"));
 const ProjectDetail = lazy(() => import("./pages/ProjectDetail"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 const LoadingFallback = () => (
   <div
@@ -38,6 +39,7 @@ function App() {
             <Route path="/project/:projectId" element={<ProjectDetail />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
         <Footer />

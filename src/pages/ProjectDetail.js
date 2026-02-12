@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useParams, Link } from "react-router-dom";
 import { getProjectById } from "../data/projects";
 import OptimizedImage from "../components/OptimizedImage";
+import usePageMeta from "../usePageMeta";
 
 const ProjectDetail = () => {
   const { projectId } = useParams();
@@ -27,6 +28,21 @@ const ProjectDetail = () => {
   }, [lightboxMedia]);
 
   const project = getProjectById(projectId);
+
+  usePageMeta(
+    project
+      ? {
+          title: `${project.title} | Manon Leroux`,
+          description: project.description,
+          path: `/project/${projectId}`,
+        }
+      : {
+          title: "Projet non trouve | Manon Leroux",
+          description:
+            "Le projet demande est introuvable. Explorez les autres projets du portfolio de Manon Leroux.",
+          path: `/project/${projectId}`,
+        }
+  );
 
   if (!project) {
     return (
@@ -151,27 +167,32 @@ const ProjectDetail = () => {
             viewport={{ once: true, margin: "-50px" }}
           >
             {project.additionalImages.map((media, index) => {
+              const mediaItem =
+                typeof media === "string"
+                  ? { src: media, autoplay: false }
+                  : media;
+              const mediaSrc = mediaItem.src;
+
               const isVideo =
-                typeof media === "string" &&
-                (media.includes(".mp4") ||
-                  media.includes(".mov") ||
-                  media.includes(".webm"));
+                typeof mediaSrc === "string" &&
+                (mediaSrc.includes(".mp4") ||
+                  mediaSrc.includes(".mov") ||
+                  mediaSrc.includes(".webm"));
 
-              const isAutoPlayVideo =
-                typeof media === "string" &&
-                (media.includes("horschampsvid.") || media.includes("apercu."));
+              const isAutoPlayVideo = Boolean(mediaItem.autoplay);
 
-              const isGif = typeof media === "string" && media.includes(".gif");
+              const isGif =
+                typeof mediaSrc === "string" && mediaSrc.includes(".gif");
 
               return (
                 <motion.div
-                  key={index}
+                  key={`${project.id}-media-${index}-${mediaSrc}`}
                   className="process-image"
                   variants={itemVariants}
                 >
                   {isVideo ? (
                     <video
-                      src={media}
+                      src={mediaSrc}
                       controls={!isAutoPlayVideo}
                       controlsList={!isAutoPlayVideo ? "nodownload" : undefined}
                       autoPlay={isAutoPlayVideo}
@@ -188,7 +209,7 @@ const ProjectDetail = () => {
                       draggable="false"
                       onClick={() => {
                         if (!isAutoPlayVideo) {
-                          setLightboxMedia({ src: media, type: "video" });
+                          setLightboxMedia({ src: mediaSrc, type: "video" });
                         }
                       }}
                       style={{
@@ -204,12 +225,12 @@ const ProjectDetail = () => {
                     </video>
                   ) : (
                     <img
-                      src={media}
+                      src={mediaSrc}
                       alt={`${project.title} - ${index + 1}`}
                       loading="lazy"
                       onClick={() =>
                         setLightboxMedia({
-                          src: media,
+                          src: mediaSrc,
                           type: isGif ? "gif" : "image",
                         })
                       }
@@ -261,9 +282,9 @@ const ProjectDetail = () => {
           <motion.div className="section-content" variants={itemVariants}>
             <h2 className="section-title">Fonctionnalités</h2>
             <div className="features-grid">
-              {project.features.map((feature, index) => (
+              {project.features.map((feature) => (
                 <motion.div
-                  key={index}
+                  key={`${project.id}-feature-${feature}`}
                   className="feature-item"
                   variants={itemVariants}
                   whileHover={{ y: -5, transition: { duration: 0.3 } }}
@@ -286,9 +307,9 @@ const ProjectDetail = () => {
           <motion.div className="section-content" variants={itemVariants}>
             <h2 className="section-title">Technologies</h2>
             <div className="tech-tags">
-              {project.technologies.map((tech, index) => (
+              {project.technologies.map((tech) => (
                 <motion.span
-                  key={index}
+                  key={`${project.id}-tech-${tech}`}
                   className="tech-tag"
                   variants={itemVariants}
                   whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
@@ -313,7 +334,7 @@ const ProjectDetail = () => {
               <div className="collaborators-list">
                 {project.collaborators.map((collaborator, index) => (
                   <motion.a
-                    key={index}
+                    key={`${project.id}-collab-${collaborator.name}`}
                     href={collaborator.github}
                     target="_blank"
                     rel="noopener noreferrer"

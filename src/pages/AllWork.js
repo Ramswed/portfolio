@@ -3,8 +3,16 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { getProjectsByIds } from "../data/projects";
 import OptimizedImage from "../components/OptimizedImage";
+import usePageMeta from "../usePageMeta";
 
 const AllWork = () => {
+  usePageMeta({
+    title: "Mes projets | Manon Leroux",
+    description:
+      "Explorez les projets web, mobile, illustration et design de Manon Leroux.",
+    path: "/all-work",
+  });
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {

@@ -1,8 +1,16 @@
 import React, { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import emailjs from "@emailjs/browser";
+import usePageMeta from "../usePageMeta";
 
 const Contact = () => {
+  usePageMeta({
+    title: "Contact | Manon Leroux",
+    description:
+      "Discutons de votre projet. Contactez Manon Leroux via le formulaire ou par email.",
+    path: "/contact",
+  });
+
   const formRef = useRef(null);
   const [formData, setFormData] = useState({
     name: "",

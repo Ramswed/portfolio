@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { Link } from "react-router-dom";
 import { getProjectsByIds } from "../data/projects";
 import OptimizedImage from "../components/OptimizedImage";
+import usePageMeta from "../usePageMeta";
 import patronImage from "../assets/images/patrondumuse.png";
 import patronImageWebp from "../assets/images/patrondumuse.webp";
 import vagImage from "../assets/images/vag.png";
@@ -11,6 +12,13 @@ import vagImageWebp from "../assets/images/vag.webp";
 const MotionLink = motion(Link);
 
 const Home = () => {
+  usePageMeta({
+    title: "Manon Leroux | Portfolio",
+    description:
+      "Portfolio de Manon Leroux, developpeuse full-stack et designer. Decouvrez une selection de projets web, mobile et creatifs.",
+    path: "/",
+  });
+
   const containerRef = useRef(null);
   const projectsRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -28,7 +36,7 @@ const Home = () => {
     return 1 - Math.pow(1 - value, 2);
   });
 
-  const scale = useTransform(easedProgress, [0, 1], [1.3, 1]);
+  const scale = useTransform(easedProgress, [0, 1], [1.3, 1.02]);
 
   const featuredProjects = getProjectsByIds([8, 3, 7, 1]);
 
@@ -144,7 +152,7 @@ const Home = () => {
         <OptimizedImage
           src={vagImage}
           webp={vagImageWebp}
-          alt=""
+          alt="Banniere decorative de la section temoignage"
           className="testimonials-banner"
           loading="lazy"
         />
