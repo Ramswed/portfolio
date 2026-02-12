@@ -1,0 +1,358 @@
+@media (max-width: 480px) {
+  .main {
+    padding: 110px 10px 32px;
+  }
+
+  .mobile-menu-toggle {
+    width: 44px;
+    height: 44px;
+  }
+
+  .nav-link {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .github-button {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .home-title,
+  .main-title {
+    font-size: 32px;
+    margin-bottom: 28px;
+  }
+
+  .featured-projects {
+    margin-bottom: 40px;
+  }
+
+  .featured-projects .project-image {
+    height: auto;
+    aspect-ratio: 16 / 10;
+  }
+
+  .featured-projects .project-image img {
+    transform: scale(1.25);
+    transform-origin: center;
+  }
+
+  .featured-projects .project-title {
+    font-size: 20px;
+  }
+
+  .values-text {
+    font-size: 18px;
+  }
+
+  .asterisk {
+    font-size: 50px;
+  }
+
+  .values-section {
+    margin: 40px 0;
+  }
+
+  .testimonials-section {
+    display: none;
+  }
+
+  .cta-text {
+    font-size: 18px;
+  }
+
+  .cta-section {
+    padding: 24px 0;
+  }
+
+  .project-row {
+    gap: 24px;
+  }
+
+  .projects-grid {
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  .project-title {
+    font-size: 18px;
+  }
+
+  .project-image {
+    height: auto;
+    aspect-ratio: 16 / 10;
+  }
+
+  .category-title {
+    font-size: 18px;
+    margin-top: 56px;
+    margin-bottom: 24px;
+  }
+
+  .project-detail .project-hero .project-title {
+    font-size: 1.75rem;
+  }
+
+  .project-detail .project-hero-image {
+    height: auto;
+    aspect-ratio: 16 / 10;
+  }
+
+  .project-detail .section-title {
+    font-size: 1.25rem;
+  }
+
+  .project-detail .section-text {
+    font-size: 15px;
+  }
+
+  .project-detail .process-image {
+    height: auto;
+    aspect-ratio: 16 / 10;
+    min-height: 160px;
+  }
+
+  .project-detail .project-section {
+    padding: 28px 0;
+  }
+
+  .contact-title {
+    font-size: 28px;
+  }
+
+  .contact-subtitle {
+    font-size: 15px;
+  }
+
+  .form-input,
+  .form-textarea {
+    font-size: 16px;
+    padding: 16px 0;
+  }
+
+  .form-submit {
+    min-height: 44px;
+  }
+
+  .contact-form-section {
+    gap: 24px;
+  }
+
+  .recruitment-section {
+    gap: 24px;
+    margin: 40px 0;
+  }
+
+  .faq-section {
+    margin: 40px 0;
+  }
+
+  .faq-header {
+    margin-bottom: 30px;
+  }
+
+  .faq-content {
+    gap: 24px;
+  }
+
+  .faq-item {
+    padding: 20px 0;
+  }
+
+  .faq-title {
+    font-size: 24px;
+  }
+
+  .faq-question {
+    font-size: 16px;
+  }
+
+  .faq-answer {
+    font-size: 14px;
+  }
+
+  .footer-links {
+    gap: 15px;
+    font-size: 14px;
+  }
+
+  .social-link {
+    width: 44px;
+    height: 44px;
+  }
+
+  .about-section {
+    padding: 0 10px;
+  }
+
+  .about-hero {
+    margin-bottom: 40px;
+    padding: 24px 0;
+  }
+
+  .member-image {
+    width: 120px;
+    height: 120px;
+  }
+
+  .member-name {
+    font-size: 24px;
+  }
+
+  .about-description,
+  .journey-description,
+  .looking-description {
+    font-size: 20px;
+  }
+
+  .specialties-description,
+  .passions-description {
+    font-size: 18px;
+  }
+
+  .about-text,
+  .timeline-text,
+  .specialty-text,
+  .passion-text,
+  .looking-text {
+    font-size: 15px;
+  }
+
+  .skill-category,
+  .specialty-item,
+  .passion-card {
+    padding: 20px;
+  }
+
+  .timeline {
+    padding-left: 25px;
+  }
+
+  .timeline-item::before {
+    left: -25px;
+    width: 12px;
+    height: 12px;
+  }
+
+  .timeline::before {
+    left: 5px;
+  }
+
+  .timeline-title {
+    font-size: 18px;
+  }
+
+  .timeline-subtitle,
+  .timeline-year {
+    font-size: 14px;
+  }
+
+  .about-content,
+  .journey-section,
+  .skills-section,
+  .specialties-section,
+  .looking-section,
+  .passions-section,
+  .social-section,
+  .cv-section {
+    margin-bottom: 40px;
+  }
+
+  .faq-item:hover {
+    background-color: transparent;
+    padding-left: 0;
+    border-radius: 0;
+    margin: 0;
+  }
+
+  .social-link:hover,
+  .project-card:hover,
+  .project-card:hover .project-image,
+  .project-card:hover .project-image img,
+  .feature-item:hover,
+  .nav-button:hover,
+  .tech-tag:hover {
+    transform: none;
+  }
+
+  .passion-card:hover {
+    border-color: #e5e5e5;
+    background-color: transparent;
+    transform: none;
+    box-shadow: none;
+  }
+
+  .passion-card:hover .passion-icon {
+    color: #000;
+    transform: none;
+    animation: none;
+  }
+
+  .passion-card:hover .passion-icon svg {
+    stroke: currentColor;
+    filter: none;
+  }
+
+  .passion-card:hover .passion-title {
+    color: #000;
+    transform: none;
+  }
+
+  .passion-card:hover .passion-text {
+    color: #666;
+  }
+}
+
+@media (max-width: 360px) {
+  .main {
+    padding: 100px 8px 28px;
+  }
+
+  .home-title,
+  .main-title {
+    font-size: 28px;
+    margin-bottom: 22px;
+  }
+
+  .nav-link {
+    font-size: 20px;
+  }
+
+  .github-button {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  .category-title {
+    font-size: 16px;
+    margin-top: 44px;
+    margin-bottom: 18px;
+  }
+
+  .project-title {
+    font-size: 16px;
+  }
+
+  .contact-title {
+    font-size: 24px;
+  }
+
+  .faq-title {
+    font-size: 20px;
+  }
+
+  .faq-question {
+    font-size: 15px;
+  }
+
+  .about-description,
+  .journey-description,
+  .looking-description {
+    font-size: 18px;
+  }
+}
