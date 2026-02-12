@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 
 const SITE_URL = "https://manonleroux.fr";
+const DEFAULT_OG_IMAGE = "/og-image.png";
 
 const upsertMeta = (selector, attributeName, attributeValue, content) => {
   let element = document.querySelector(selector);
@@ -26,9 +27,22 @@ const upsertCanonical = (url) => {
   canonical.setAttribute("href", url);
 };
 
-const usePageMeta = ({ title, description, path = "/" }) => {
+const toAbsoluteUrl = (value) => {
+  if (!value) {
+    return new URL(DEFAULT_OG_IMAGE, SITE_URL).toString();
+  }
+
+  try {
+    return new URL(value, SITE_URL).toString();
+  } catch {
+    return new URL(DEFAULT_OG_IMAGE, SITE_URL).toString();
+  }
+};
+
+const usePageMeta = ({ title, description, path = "/", image }) => {
   useEffect(() => {
     const pageUrl = new URL(path, SITE_URL).toString();
+    const socialImage = toAbsoluteUrl(image);
 
     document.title = title;
     upsertMeta('meta[name="description"]', "name", "description", description);
@@ -40,6 +54,7 @@ const usePageMeta = ({ title, description, path = "/" }) => {
       description
     );
     upsertMeta('meta[property="og:url"]', "property", "og:url", pageUrl);
+    upsertMeta('meta[property="og:image"]', "property", "og:image", socialImage);
     upsertMeta('meta[name="twitter:title"]', "name", "twitter:title", title);
     upsertMeta(
       'meta[name="twitter:description"]',
@@ -47,8 +62,9 @@ const usePageMeta = ({ title, description, path = "/" }) => {
       "twitter:description",
       description
     );
+    upsertMeta('meta[name="twitter:image"]', "name", "twitter:image", socialImage);
     upsertCanonical(pageUrl);
-  }, [description, path, title]);
+  }, [description, image, path, title]);
 };
 
 export default usePageMeta;

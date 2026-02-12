@@ -31,9 +31,30 @@
   font-size: inherit;
 }
 
+.footer-links a:visited,
+.footer-link:visited,
+.footer-links a:active,
+.footer-link:active {
+  color: #333;
+  text-decoration: none;
+}
+
 .footer-links a:hover,
 .footer-link:hover {
   color: #ff3300;
+}
+
+.footer-links a:focus,
+.footer-link:focus {
+  outline: none;
+  text-decoration: none;
+}
+
+.footer-links a:focus-visible,
+.footer-link:focus-visible {
+  outline: 2px solid #0114dd;
+  outline-offset: 3px;
+  border-radius: 4px;
 }
 
 .social-links {

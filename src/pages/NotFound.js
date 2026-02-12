@@ -6,7 +6,7 @@ const NotFound = () => {
   usePageMeta({
     title: "Page introuvable | Manon Leroux",
     description:
-      "La page demandee n'existe pas ou a ete deplacee. Retournez au portfolio de Manon Leroux.",
+      "La page demandée n'existe pas ou a été déplacée. Retournez au portfolio de Manon Leroux.",
     path: "/404",
   });
 

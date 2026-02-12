@@ -143,39 +143,6 @@
     gap: 24px;
   }
 
-  .recruitment-section {
-    gap: 24px;
-    margin: 40px 0;
-  }
-
-  .faq-section {
-    margin: 40px 0;
-  }
-
-  .faq-header {
-    margin-bottom: 30px;
-  }
-
-  .faq-content {
-    gap: 24px;
-  }
-
-  .faq-item {
-    padding: 20px 0;
-  }
-
-  .faq-title {
-    font-size: 24px;
-  }
-
-  .faq-question {
-    font-size: 16px;
-  }
-
-  .faq-answer {
-    font-size: 14px;
-  }
-
   .footer-links {
     gap: 15px;
     font-size: 14px;
@@ -263,13 +230,6 @@
     margin-bottom: 40px;
   }
 
-  .faq-item:hover {
-    background-color: transparent;
-    padding-left: 0;
-    border-radius: 0;
-    margin: 0;
-  }
-
   .social-link:hover,
   .project-card:hover,
   .project-card:hover .project-image,
@@ -340,14 +300,6 @@
 
   .contact-title {
     font-size: 24px;
-  }
-
-  .faq-title {
-    font-size: 20px;
-  }
-
-  .faq-question {
-    font-size: 15px;
   }
 
   .about-description,

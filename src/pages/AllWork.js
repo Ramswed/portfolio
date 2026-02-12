@@ -4,6 +4,11 @@ import { Link } from "react-router-dom";
 import { getProjectsByIds } from "../data/projects";
 import OptimizedImage from "../components/OptimizedImage";
 import usePageMeta from "../usePageMeta";
+import {
+  createContainerVariants,
+  createItemVariants,
+  createTitleVariants,
+} from "../utils/motionVariants";
 
 const AllWork = () => {
   usePageMeta({
@@ -13,39 +18,9 @@ const AllWork = () => {
     path: "/all-work",
   });
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.05,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: [0.4, 0, 0.2, 1],
-      },
-    },
-  };
-
-  const titleVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: [0.4, 0, 0.2, 1],
-      },
-    },
-  };
+  const containerVariants = createContainerVariants(0.05);
+  const itemVariants = createItemVariants(30, 0.6);
+  const titleVariants = createTitleVariants(20, 0.8);
 
   const category1Row1 = getProjectsByIds([3, 7]);
   const category1Row2 = getProjectsByIds([8, 4]);
@@ -74,6 +49,8 @@ const AllWork = () => {
                   src={project.image}
                   webp={project.imageWebp}
                   alt={project.title}
+                  width={1600}
+                  height={1000}
                   loading="lazy"
                 />
               </div>

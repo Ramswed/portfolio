@@ -3,39 +3,21 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import OptimizedImage from "../components/OptimizedImage";
 import usePageMeta from "../usePageMeta";
+import { createContainerVariants, createItemVariants } from "../utils/motionVariants";
 import cvPdf from "../assets/images/CV.pdf";
 import cmoiImage from "../assets/images/pp/cmoi.png";
 import cmoiImageWebp from "../assets/images/pp/cmoi.webp";
 
 const About = () => {
   usePageMeta({
-    title: "A propos | Manon Leroux",
+    title: "À propos | Manon Leroux",
     description:
-      "A propos de Manon Leroux : parcours, competences et recherche d'alternance en developpement full-stack.",
+      "À propos de Manon Leroux : parcours, compétences et recherche d'alternance en développement full-stack.",
     path: "/about",
   });
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: [0.4, 0, 0.2, 1],
-      },
-    },
-  };
+  const containerVariants = createContainerVariants(0.1);
+  const itemVariants = createItemVariants(30, 0.6);
 
   return (
     <main className="main">
@@ -56,6 +38,8 @@ const About = () => {
                   src={cmoiImage}
                   webp={cmoiImageWebp}
                   alt="Manon Leroux"
+                  width={120}
+                  height={120}
                 />
               </div>
             </div>

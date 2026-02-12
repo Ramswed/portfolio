@@ -1,13 +1,19 @@
-import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import React, { useState, useEffect, useRef } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { useParams, Link } from "react-router-dom";
 import { getProjectById } from "../data/projects";
 import OptimizedImage from "../components/OptimizedImage";
 import usePageMeta from "../usePageMeta";
+import {
+  createContainerVariants,
+  createItemVariants,
+  createTitleVariants,
+} from "../utils/motionVariants";
 
 const ProjectDetail = () => {
   const { projectId } = useParams();
   const [lightboxMedia, setLightboxMedia] = useState(null);
+  const closeButtonRef = useRef(null);
 
   useEffect(() => {
     const handleEscape = (e) => {
@@ -15,15 +21,36 @@ const ProjectDetail = () => {
         setLightboxMedia(null);
       }
     };
+    const trapFocus = (e) => {
+      if (e.key === "Tab" && lightboxMedia) {
+        e.preventDefault();
+        closeButtonRef.current?.focus();
+      }
+    };
 
-    if (lightboxMedia) {
-      document.addEventListener("keydown", handleEscape);
-      document.body.style.overflow = "hidden";
+    if (!lightboxMedia) {
+      return () => {
+        document.removeEventListener("keydown", handleEscape);
+        document.removeEventListener("keydown", trapFocus);
+        document.body.style.overflow = "unset";
+      };
     }
+
+    const previouslyFocusedElement = document.activeElement;
+    document.addEventListener("keydown", handleEscape);
+    document.addEventListener("keydown", trapFocus);
+    document.body.style.overflow = "hidden";
+    requestAnimationFrame(() => {
+      closeButtonRef.current?.focus();
+    });
 
     return () => {
       document.removeEventListener("keydown", handleEscape);
+      document.removeEventListener("keydown", trapFocus);
       document.body.style.overflow = "unset";
+      if (previouslyFocusedElement instanceof HTMLElement) {
+        previouslyFocusedElement.focus();
+      }
     };
   }, [lightboxMedia]);
 
@@ -35,6 +62,7 @@ const ProjectDetail = () => {
           title: `${project.title} | Manon Leroux`,
           description: project.description,
           path: `/project/${projectId}`,
+          image: project.image,
         }
       : {
           title: "Projet non trouve | Manon Leroux",
@@ -46,53 +74,23 @@ const ProjectDetail = () => {
 
   if (!project) {
     return (
-      <div className="project-detail">
+      <main className="project-detail">
         <div className="project-container">
           <h1>Projet non trouvé</h1>
           <Link to="/all-work" className="back-link">
             ← Retour aux projets
           </Link>
         </div>
-      </div>
+      </main>
     );
   }
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: [0.4, 0, 0.2, 1],
-      },
-    },
-  };
-
-  const titleVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: [0.4, 0, 0.2, 1],
-      },
-    },
-  };
+  const containerVariants = createContainerVariants(0.1);
+  const itemVariants = createItemVariants(20, 0.6);
+  const titleVariants = createTitleVariants(30, 0.8);
 
   return (
-    <div className="project-detail">
+    <main className="project-detail">
       <div className="project-container">
         <motion.div
           className="project-header"
@@ -140,6 +138,8 @@ const ProjectDetail = () => {
             src={project.image}
             webp={project.imageWebp}
             alt={project.title}
+            width={1600}
+            height={1000}
             className="hero-image"
             loading="eager"
           />
@@ -172,14 +172,18 @@ const ProjectDetail = () => {
                   ? { src: media, autoplay: false }
                   : media;
               const mediaSrc = mediaItem.src;
+              const mediaPoster = mediaItem.poster;
 
               const isVideo =
                 typeof mediaSrc === "string" &&
                 (mediaSrc.includes(".mp4") ||
                   mediaSrc.includes(".mov") ||
                   mediaSrc.includes(".webm"));
+              const effectivePoster = isVideo ? mediaPoster || project.image : undefined;
 
-              const isAutoPlayVideo = Boolean(mediaItem.autoplay);
+              const hasPoster = Boolean(effectivePoster);
+              const shouldAutoplay = false;
+              const showInlineControls = !hasPoster;
 
               const isGif =
                 typeof mediaSrc === "string" && mediaSrc.includes(".gif");
@@ -191,43 +195,60 @@ const ProjectDetail = () => {
                   variants={itemVariants}
                 >
                   {isVideo ? (
-                    <video
-                      src={mediaSrc}
-                      controls={!isAutoPlayVideo}
-                      controlsList={!isAutoPlayVideo ? "nodownload" : undefined}
-                      autoPlay={isAutoPlayVideo}
-                      loop={isAutoPlayVideo}
-                      muted={isAutoPlayVideo}
-                      playsInline={isAutoPlayVideo}
-                      onPause={(e) => {
-                        if (isAutoPlayVideo) {
-                          e.target.play();
+                    <>
+                      <video
+                        src={mediaSrc}
+                        poster={effectivePoster}
+                        controls={showInlineControls}
+                        controlsList={
+                          showInlineControls ? "nodownload" : undefined
                         }
-                      }}
-                      onContextMenu={(e) => e.preventDefault()}
-                      onDragStart={(e) => e.preventDefault()}
-                      draggable="false"
-                      onClick={() => {
-                        if (!isAutoPlayVideo) {
-                          setLightboxMedia({ src: mediaSrc, type: "video" });
+                        autoPlay={shouldAutoplay}
+                        loop={shouldAutoplay}
+                        muted={shouldAutoplay}
+                        playsInline={shouldAutoplay}
+                        preload={
+                          hasPoster ? "none" : shouldAutoplay ? "auto" : "metadata"
                         }
-                      }}
-                      style={{
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "cover",
-                        borderRadius: "8px",
-                        pointerEvents: isAutoPlayVideo ? "none" : "auto",
-                        cursor: isAutoPlayVideo ? "default" : "pointer",
-                      }}
-                    >
-                      Votre navigateur ne supporte pas la lecture de vidéos.
-                    </video>
+                        onContextMenu={(e) => e.preventDefault()}
+                        onDragStart={(e) => e.preventDefault()}
+                        draggable="false"
+                        onClick={() => {
+                          if (hasPoster) {
+                            setLightboxMedia({
+                              src: mediaSrc,
+                              type: "video",
+                              poster: effectivePoster,
+                            });
+                          }
+                        }}
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "cover",
+                          borderRadius: "8px",
+                          pointerEvents: "auto",
+                          cursor: hasPoster ? "pointer" : "default",
+                        }}
+                      >
+                        Votre navigateur ne supporte pas la lecture de vidéos.
+                      </video>
+                      {hasPoster && (
+                        <span
+                          className="video-hint-badge"
+                          aria-hidden="true"
+                          title="Vidéo - cliquer pour lire"
+                        >
+                          ▶
+                        </span>
+                      )}
+                    </>
                   ) : (
                     <img
                       src={mediaSrc}
                       alt={`${project.title} - ${index + 1}`}
                       loading="lazy"
+                      decoding="async"
                       onClick={() =>
                         setLightboxMedia({
                           src: mediaSrc,
@@ -423,56 +444,65 @@ const ProjectDetail = () => {
         </motion.section>
       </div>
 
-      {lightboxMedia && (
-        <motion.div
-          className="lightbox-overlay"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          onClick={() => setLightboxMedia(null)}
-        >
+      <AnimatePresence>
+        {lightboxMedia && (
           <motion.div
-            className="lightbox-content"
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.8, opacity: 0 }}
-            onClick={(e) => e.stopPropagation()}
+            className="lightbox-overlay"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setLightboxMedia(null)}
           >
-            <button
-              className="lightbox-close"
-              onClick={() => setLightboxMedia(null)}
-              aria-label="Fermer"
+            <motion.div
+              className="lightbox-content"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              onClick={(e) => e.stopPropagation()}
+              role="dialog"
+              aria-modal="true"
+              aria-label={`Aperçu de ${project.title}`}
             >
-              ×
-            </button>
-            {lightboxMedia.type === "video" ? (
-              <video
-                src={lightboxMedia.src}
-                controls
-                controlsList="nodownload"
-                autoPlay
-                className="lightbox-video"
-                onContextMenu={(e) => e.preventDefault()}
-                onDragStart={(e) => e.preventDefault()}
-                draggable="false"
+              <button
+                className="lightbox-close"
+                onClick={() => setLightboxMedia(null)}
+                aria-label="Fermer"
+                ref={closeButtonRef}
               >
-                Votre navigateur ne supporte pas la lecture de vidéos.
-              </video>
-            ) : (
-              <img
-                src={lightboxMedia.src}
-                alt={`${project.title} - Vue agrandie`}
-                className="lightbox-image"
-                loading="eager"
-                onContextMenu={(e) => e.preventDefault()}
-                onDragStart={(e) => e.preventDefault()}
-                draggable="false"
-              />
-            )}
+                ×
+              </button>
+              {lightboxMedia.type === "video" ? (
+                <video
+                  src={lightboxMedia.src}
+                  poster={lightboxMedia.poster}
+                  controls
+                  controlsList="nodownload"
+                  autoPlay
+                  preload="metadata"
+                  className="lightbox-video"
+                  onContextMenu={(e) => e.preventDefault()}
+                  onDragStart={(e) => e.preventDefault()}
+                  draggable="false"
+                >
+                  Votre navigateur ne supporte pas la lecture de vidéos.
+                </video>
+              ) : (
+                <img
+                  src={lightboxMedia.src}
+                  alt={`${project.title} - Vue agrandie`}
+                  className="lightbox-image"
+                  loading="eager"
+                  decoding="async"
+                  onContextMenu={(e) => e.preventDefault()}
+                  onDragStart={(e) => e.preventDefault()}
+                  draggable="false"
+                />
+              )}
+            </motion.div>
           </motion.div>
-        </motion.div>
-      )}
-    </div>
+        )}
+      </AnimatePresence>
+    </main>
   );
 };
 

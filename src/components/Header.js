@@ -47,7 +47,7 @@ const Header = () => {
           <button
             className="mobile-menu-toggle"
             onClick={toggleMenu}
-            aria-label="Toggle menu"
+            aria-label={isMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
             aria-expanded={isMenuOpen}
           >
             <span className={`hamburger-line ${isMenuOpen ? "open" : ""}`}></span>

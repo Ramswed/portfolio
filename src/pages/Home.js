@@ -4,6 +4,11 @@ import { Link } from "react-router-dom";
 import { getProjectsByIds } from "../data/projects";
 import OptimizedImage from "../components/OptimizedImage";
 import usePageMeta from "../usePageMeta";
+import {
+  createContainerVariants,
+  createItemVariants,
+  createTitleVariants,
+} from "../utils/motionVariants";
 import patronImage from "../assets/images/patrondumuse.png";
 import patronImageWebp from "../assets/images/patrondumuse.webp";
 import vagImage from "../assets/images/vag.png";
@@ -15,7 +20,7 @@ const Home = () => {
   usePageMeta({
     title: "Manon Leroux | Portfolio",
     description:
-      "Portfolio de Manon Leroux, developpeuse full-stack et designer. Decouvrez une selection de projets web, mobile et creatifs.",
+      "Portfolio de Manon Leroux, développeuse full-stack et designer. Découvrez une sélection de projets web, mobile et créatifs.",
     path: "/",
   });
 
@@ -40,39 +45,9 @@ const Home = () => {
 
   const featuredProjects = getProjectsByIds([8, 3, 7, 1]);
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: [0.4, 0, 0.2, 1],
-      },
-    },
-  };
-
-  const titleVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: [0.4, 0, 0.2, 1],
-      },
-    },
-  };
+  const containerVariants = createContainerVariants(0.1);
+  const itemVariants = createItemVariants(30, 0.6);
+  const titleVariants = createTitleVariants(20, 0.8);
 
   return (
     <main className="main" ref={containerRef}>
@@ -109,6 +84,8 @@ const Home = () => {
                         src={project.image}
                         webp={project.imageWebp}
                         alt={project.title}
+                        width={1600}
+                        height={1000}
                         loading="lazy"
                       />
                     </motion.div>
@@ -175,6 +152,8 @@ const Home = () => {
             src={patronImage}
             webp={patronImageWebp}
             alt="Hugo, patron du Muse Bar"
+            width={500}
+            height={700}
             loading="lazy"
           />
         </div>

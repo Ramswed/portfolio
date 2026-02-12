@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import usePageMeta from "../usePageMeta";
+import { createContainerVariants, createItemVariants } from "../utils/motionVariants";
 
 const Contact = () => {
   usePageMeta({
@@ -90,27 +91,8 @@ const Contact = () => {
     }
   };
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: [0.4, 0, 0.2, 1],
-      },
-    },
-  };
+  const containerVariants = createContainerVariants(0.1);
+  const itemVariants = createItemVariants(30, 0.6);
 
   return (
     <main className="main">

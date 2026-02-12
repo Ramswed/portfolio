@@ -7,6 +7,7 @@ const OptimizedImage = ({
   width,
   height,
   loading = "lazy",
+  decoding = "async",
   className = "",
   onClick,
   style,
@@ -20,6 +21,7 @@ const OptimizedImage = ({
         width={width}
         height={height}
         loading={loading}
+        decoding={decoding}
         className={className}
         onClick={onClick}
         style={style}
@@ -37,6 +39,7 @@ const OptimizedImage = ({
         width={width}
         height={height}
         loading={loading}
+        decoding={decoding}
         className={className}
         onClick={onClick}
         style={style}

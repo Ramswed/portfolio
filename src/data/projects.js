@@ -15,11 +15,14 @@ import forumImage from "../assets/images/forum/forum.png";
 import forum1Image from "../assets/images/forum/forum1.png";
 import forum2Image from "../assets/images/forum/forum2.png";
 import forum3Image from "../assets/images/forum/forum3.png";
+import forumApercuFirstFrameWebp from "../assets/images/forum/apercu-first-frame.webp";
 import apercuMp4 from "../assets/images/forum/apercu.mp4";
 import photoboothImage from "../assets/images/photokab/photobooth.png";
 import photokabOuiImage from "../assets/images/photokab/oui.png";
 import photokabTimelaps from "../assets/images/photokab/timelaps.mp4";
 import photokabKabin1Image from "../assets/images/photokab/kabin1.png";
+import photokabKabin2Webp from "../assets/images/photokab/kabin2.webp";
+import photokabKabin3Webp from "../assets/images/photokab/kabin3.webp";
 import photokabApercuuMp4 from "../assets/images/photokab/apercuu.mp4";
 import musebarImage from "../assets/images/musebar.png";
 import musebar1Image from "../assets/images/musebar/1haut-de-page.png";
@@ -35,6 +38,7 @@ import horschamps1Image from "../assets/images/horschamps/horschamps1.png";
 import horschampsvid from "../assets/images/horschamps/horschampsvid.mp4";
 import horschampsvid2 from "../assets/images/horschamps/horschampsvid2.mp4";
 import horschampsvid3 from "../assets/images/horschamps/horschampsvid3.mp4";
+import horschampsvidFirstFrameWebp from "../assets/images/horschamps/horschampsvid-first-frame.webp";
 import visuHC1 from "../assets/images/horschamps/visuHC1.png";
 import visuHC2 from "../assets/images/horschamps/visuHC2.png";
 
@@ -205,7 +209,7 @@ export const projects = [
       forum1Image,
       forum2Image,
       forum3Image,
-      { src: apercuMp4, autoplay: true },
+      { src: apercuMp4, poster: forumApercuFirstFrameWebp },
     ],
     longDescription:
       "Forum web communautaire dédié à la passion pour Windows 95. Les utilisateurs peuvent s'inscrire, créer des posts et commentaires, liker/disliker les contenus, et filtrer par catégories. Interface nostalgique avec l'esthétique Windows 95 pour une expérience immersive.",
@@ -244,8 +248,8 @@ export const projects = [
     imageWebp: photoboothImageWebp,
     additionalImages: [
       photokabOuiImage,
-      photokabTimelaps,
-      { src: photokabApercuuMp4, autoplay: true },
+      { src: photokabTimelaps, poster: photokabKabin2Webp },
+      { src: photokabApercuuMp4, poster: photokabKabin3Webp },
       photokabKabin1Image,
     ],
     year: "2026",
@@ -345,9 +349,9 @@ export const projects = [
     imageWebp: horschampImageWebp,
     additionalImages: [
       horschamps1Image,
-      { src: horschampsvid3, autoplay: true },
-      { src: horschampsvid2, autoplay: true },
-      { src: horschampsvid, autoplay: true },
+      { src: horschampsvid3, poster: visuHC1 },
+      { src: horschampsvid2, poster: visuHC2 },
+      { src: horschampsvid, poster: horschampsvidFirstFrameWebp },
       visuHC1,
       visuHC2,
     ],
