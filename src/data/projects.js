@@ -1,7 +1,7 @@
 import asciiartImage from "../assets/images/asciiart/asciiart.png";
 import ascii1Image from "../assets/images/asciiart/ascii1.png";
 import ascii2Image from "../assets/images/asciiart/ascii2.png";
-import groupieImage from "../assets/images/groupietracker/groupie .png";
+import groupieImage from "../assets/images/groupietracker/groupie.png";
 import groupie1Image from "../assets/images/groupietracker/groupie1.png";
 import groupie2Image from "../assets/images/groupietracker/groupie2.png";
 import groupie3Image from "../assets/images/groupietracker/groupie3.png";
@@ -20,11 +20,11 @@ import photoboothImage from "../assets/images/photokab/photobooth.png";
 import photokabOuiImage from "../assets/images/photokab/oui.png";
 import photokabTimelaps from "../assets/images/photokab/timelaps.mp4";
 import photokabKabin1Image from "../assets/images/photokab/kabin1.png";
-import photokabApercuuMp4 from "../assets/images/photokab/aperçuu.mp4";
+import photokabApercuuMp4 from "../assets/images/photokab/apercuu.mp4";
 import musebarImage from "../assets/images/musebar.png";
-import musebar1Image from "../assets/images/musebar/1haut de page.png";
+import musebar1Image from "../assets/images/musebar/1haut-de-page.png";
 import musebar2Image from "../assets/images/musebar/2carte.png";
-import musebar3Image from "../assets/images/musebar/3notre histoire.png";
+import musebar3Image from "../assets/images/musebar/3notre-histoire.png";
 import musebar4Image from "../assets/images/musebar/4privatiser.png";
 import snsmImage from "../assets/images/snsm/snsm.png";
 import snsm1Image from "../assets/images/snsm/snsm00001.png";
@@ -39,7 +39,7 @@ import visuHC1 from "../assets/images/horschamps/visuHC1.png";
 import visuHC2 from "../assets/images/horschamps/visuHC2.png";
 
 import asciiartImageWebp from "../assets/images/asciiart/asciiart.webp";
-import groupieImageWebp from "../assets/images/groupietracker/groupie .webp";
+import groupieImageWebp from "../assets/images/groupietracker/groupie.webp";
 import pocketmeImageWebp from "../assets/images/pocket/pocket.webp";
 import flintImageWebp from "../assets/images/flint/flint.webp";
 import forumImageWebp from "../assets/images/forum/forum.webp";
@@ -201,7 +201,12 @@ export const projects = [
     discipline: "Site Web, forum",
     sector: "Communauté / Nostalgie",
     description: "PROJET D'ÉCOLE - Forum pour les fans de Windows 95",
-    additionalImages: [forum1Image, forum2Image, forum3Image, apercuMp4],
+    additionalImages: [
+      forum1Image,
+      forum2Image,
+      forum3Image,
+      { src: apercuMp4, autoplay: true },
+    ],
     longDescription:
       "Forum web communautaire dédié à la passion pour Windows 95. Les utilisateurs peuvent s'inscrire, créer des posts et commentaires, liker/disliker les contenus, et filtrer par catégories. Interface nostalgique avec l'esthétique Windows 95 pour une expérience immersive.",
     features: [
@@ -240,7 +245,7 @@ export const projects = [
     additionalImages: [
       photokabOuiImage,
       photokabTimelaps,
-      photokabApercuuMp4,
+      { src: photokabApercuuMp4, autoplay: true },
       photokabKabin1Image,
     ],
     year: "2026",
@@ -340,9 +345,9 @@ export const projects = [
     imageWebp: horschampImageWebp,
     additionalImages: [
       horschamps1Image,
-      horschampsvid3,
-      horschampsvid2,
-      horschampsvid,
+      { src: horschampsvid3, autoplay: true },
+      { src: horschampsvid2, autoplay: true },
+      { src: horschampsvid, autoplay: true },
       visuHC1,
       visuHC2,
     ],
